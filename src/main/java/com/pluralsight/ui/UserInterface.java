@@ -181,6 +181,8 @@ public class UserInterface
         }
     }
 
+
+
     public static void potionSelectionScreen()
     {
         System.out.println();
@@ -220,6 +222,8 @@ public class UserInterface
         }
     }
 
+
+
     public static void itemSelectionScreen()
     {
         System.out.println();
@@ -253,6 +257,8 @@ public class UserInterface
         }
     }
 
+
+
     public static void checkoutScreen()
     {
         System.out.println();
@@ -273,8 +279,6 @@ public class UserInterface
                 case "Y":
                     break;
                 case "N":
-                    break;
-                case "0":
                     orderScreen();
                     break;
                 default:
