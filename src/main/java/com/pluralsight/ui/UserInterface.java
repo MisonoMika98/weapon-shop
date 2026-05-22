@@ -63,7 +63,7 @@ public class UserInterface
                     itemSelectionScreen();
                     break;
                 case "4":
-                    // insert CHECKOUT menu here
+                    checkoutScreen();
                     break;
                 case "0":
                     homeScreen();
@@ -173,6 +173,10 @@ public class UserInterface
                     orderScreen();
                     break;
 
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+
             }
         }
     }
@@ -180,13 +184,106 @@ public class UserInterface
     public static void potionSelectionScreen()
     {
         System.out.println();
+        System.out.println("Potion Order");
+        System.out.println("----------------------------------");
+        System.out.println("Please select a potion");
+        System.out.println("1) Small Potion");
+        System.out.println("2) Medium Potion");
+        System.out.println("3) Large Potion");
+        System.out.println("4) Max Potion");
+        System.out.println("5) Elixir");
+        System.out.println("0) Go Back");
+
+        while (true)
+        {
+            String choice = getUserInput("Select an option: ");
+
+            switch (choice)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "4":
+                    break;
+                case "5":
+                    break;
+                case "0":
+                    orderScreen();
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+            }
+        }
     }
 
     public static void itemSelectionScreen()
     {
         System.out.println();
+        System.out.println("Item Order");
+        System.out.println("----------------------------------");
+        System.out.println("Please select an item");
+        System.out.println("1) Smoke Ball");
+        System.out.println("2) Teleport Stone");
+        System.out.println("3) Bomb");
+        System.out.println("0) Go Back");
+
+        while (true)
+        {
+            String choice = getUserInput("Select an option: ");
+
+            switch (choice)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    break;
+                case "0":
+                    orderScreen();
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+            }
+        }
     }
 
+    public static void checkoutScreen()
+    {
+        System.out.println();
+        System.out.println("Your Order");
+        System.out.println("--------------------------------------------------");
+        System.out.println("[INSERT ORDER HERE]");
+        System.out.println();
+        System.out.println("What would you like to do?");
+        System.out.println("Y) Confirm Order"); // prints order to the .csv file
+        System.out.println("N) Cancel Order"); // discards
+
+        while (true)
+        {
+            String choice = getUserInput("Pick here: ");
+
+            switch (choice)
+            {
+                case "Y":
+                    break;
+                case "N":
+                    break;
+                case "0":
+                    orderScreen();
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+            }
+        }
+
+    }
 
 
 
