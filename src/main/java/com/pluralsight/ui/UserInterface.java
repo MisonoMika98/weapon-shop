@@ -1,5 +1,7 @@
 package com.pluralsight.ui;
 
+import com.pluralsight.models.Weapon;
+
 import java.util.Scanner;
 
 public class UserInterface
@@ -106,10 +108,13 @@ public class UserInterface
                     switch (choice)
                     {
                         case "A":
+                            enhancementSelectionScreen("Sword", "Piercing", 400);
                             break;
                         case "B":
+                            enhancementSelectionScreen("Katana", "Piercing", 500);
                             break;
                         case "C":
+                            enhancementSelectionScreen("Spear","Piercing", 1000);
                             break;
                         case "0":
                             weaponSelectionScreen();
@@ -131,10 +136,13 @@ public class UserInterface
                     switch (choice2)
                     {
                         case "A":
+                            enhancementSelectionScreen("Staff","Blunt",300);
                             break;
                         case "B":
+                            enhancementSelectionScreen("Mace","Blunt", 400);
                             break;
                         case "C":
+                            enhancementSelectionScreen("Hammer","Blunt", 475);
                             break;
                         case "0":
                             weaponSelectionScreen();
@@ -156,10 +164,13 @@ public class UserInterface
                     switch (choice3)
                     {
                         case "A":
+                            enhancementSelectionScreen("Bow","Ranged",675);
                             break;
                         case "B":
+                            enhancementSelectionScreen("Gun","Ranged", 750);
                             break;
                         case "C":
+                            enhancementSelectionScreen("Boomerang","Ranged", 550);
                             break;
                         case "0":
                             weaponSelectionScreen();
@@ -181,6 +192,69 @@ public class UserInterface
         }
     }
 
+
+
+    public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
+    {
+        System.out.println();
+        System.out.println("Please select an Enhancement category");
+        System.out.println("1) Regular Enhancement (Prices vary from $100-$300)");
+        System.out.println("2) Premium Enhancement (Prices vary from $500-$10000)");
+        System.out.println("0) Go Back");
+
+        while (true)
+        {
+            String choice = getUserInput("Select an option: ");
+            switch (choice)
+            {
+                case "1":
+                    System.out.println();
+                    System.out.println("Regular Enhancement List");
+                    System.out.println("---------------------------------------------");
+                    System.out.println("A) Fire ($100)");
+                    System.out.println("B) Water ($100)");
+                    System.out.println("C) Electricity ($100)");
+                    System.out.println("D) Wind ($200)");
+                    System.out.println("E) Ice ($200)");
+                    System.out.println("F) Earth ($200)");
+                    System.out.println("G) Wood ($300)");
+                    System.out.println("H) Poison ($75)");
+                    System.out.println("I) Sleep ($250)");
+                    System.out.println("J) Drain ($250");
+                    System.out.println("0) Go Back");
+
+                    String enhancementSelection = getUserInput("Select an Enhancement here: ");
+                    switch (enhancementSelection)
+                    {
+                        case "A":
+                            String color = colorSelectionScreen(); // let me cook
+                            Weapon weapon = new Weapon(weaponName, weaponType, color, price + 100);
+
+                    }
+
+                break;
+                case "2":
+                    System.out.println();
+                    System.out.println("Premium Enhancement List");
+                    System.out.println("---------------------------------------------");
+
+                    break;
+                case "0":
+                    weaponSelectionScreen();
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+            }
+        }
+    }
+
+
+
+    public static String colorSelectionScreen()
+    {
+        return "God help me";
+    }
 
 
     public static void potionSelectionScreen()

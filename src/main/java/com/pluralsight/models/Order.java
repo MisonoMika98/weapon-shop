@@ -18,7 +18,7 @@ public class Order
         valuables.remove(valuable);
     }
 
-    public  List<OrderValuable> getValuables()
+    public List<OrderValuable> getValuables()
     {
         return valuables;
     }

@@ -1,4 +1,6 @@
 package com.pluralsight.models;
 
-public class Enhancement {
+public class Enhancement
+{
+
 }
