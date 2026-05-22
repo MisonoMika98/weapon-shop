@@ -1,4 +1,4 @@
 package com.pluralsight.util;
 
-public class RecieptWriter {
+public class ReceiptWriter {
 }
