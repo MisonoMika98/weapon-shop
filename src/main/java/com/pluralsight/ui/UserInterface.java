@@ -1,13 +1,25 @@
 package com.pluralsight.ui;
 
+import com.pluralsight.models.Enhancement;
+import com.pluralsight.models.Order;
 import com.pluralsight.models.Weapon;
 
 import java.util.Scanner;
 
 public class UserInterface
 {
-    private static Scanner userInput = new Scanner(System.in);
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
 
+    public static final String RESET = "\u001B[0m";
+
+    private static Scanner userInput = new Scanner(System.in);
+    private static Order order = new Order();
 
     public static void homeScreen()
     {
@@ -123,6 +135,7 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
+                    break;
 
                 case "2":
                     System.out.println();
@@ -151,6 +164,7 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
+                    break;
 
                 case "3":
                     System.out.println();
@@ -179,6 +193,7 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
+                    break;
 
                 case "0":
                     orderScreen();
@@ -224,15 +239,21 @@ public class UserInterface
                     System.out.println("0) Go Back");
 
                     String enhancementSelection = getUserInput("Select an Enhancement here: ");
+                    String color = null; // this fixes the bug I had made color break after I added the Enhancement object
+
                     switch (enhancementSelection)
                     {
                         case "A":
-                            String color = colorSelectionScreen(); // let me cook
-                            Weapon weapon = new Weapon(weaponName, weaponType, color, price + 100);
+                            color = colorSelectionScreen();
+                            Enhancement enhancement = new Enhancement("Fire", 100);
+                            Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
+                            order.addValuable(weapon);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            return;
 
                     }
-
                 break;
+
                 case "2":
                     System.out.println();
                     System.out.println("Premium Enhancement List");
@@ -253,8 +274,62 @@ public class UserInterface
 
     public static String colorSelectionScreen()
     {
-        return "God help me";
+        System.out.println();
+        System.out.println("Please select a color for your weapon");
+        System.out.println("1) " + RED + "Red" + RESET);
+        System.out.println("2) " + BLUE + "Blue" + RESET);
+        System.out.println("3) " + GREEN + "Green" + RESET);
+        System.out.println("4) " + YELLOW + "Yellow" + RESET);
+        System.out.println("5) " + PURPLE + "Purple" + RESET);
+        System.out.println("6) " + CYAN + "Cyan" + RESET);
+        System.out.println("7) " + BLACK + "Black" + RESET);
+
+        while (true)
+        {
+            String choice = getUserInput("Select an option: ");
+            switch (choice)
+            {
+                case "1":
+                    return "Red";
+                case "2":
+                    return "Blue";
+                case "3":
+                    return "Green";
+                case "4":
+                    return "Yellow";
+                case "5":
+                    return "Purple";
+                case "6":
+                    return "Cyan";
+                case "7":
+                    return "Black";
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
     }
+
+
+
+    public static String colorize(String text, String color)
+    {
+        switch (color)
+        {
+            case "Red":
+                return RED + text + RESET;
+            case "Blue":
+                return BLUE + text + RESET;
+            case "Green":
+                return GREEN + text + RESET;
+            case "Yellow":
+                return YELLOW + text + RESET;
+            case "Purple":
+                return PURPLE + text + RESET;
+            default:
+                return text;
+        }
+    }
+
 
 
     public static void potionSelectionScreen()

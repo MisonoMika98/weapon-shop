@@ -6,13 +6,15 @@ public class Weapon implements OrderValuable
     private String weaponType;
     private String color;
     private double price;
+    private Enhancement enhancement;
 
-    public Weapon(String name, String weaponType, String color, double price)
+    public Weapon(String name, String weaponType, String color, double price, Enhancement enhancement)
     {
         this.name = name;
         this.weaponType = weaponType;
         this.color = color;
         this.price = price;
+        this.enhancement = enhancement;
     }
 
     @Override
@@ -42,10 +44,18 @@ public class Weapon implements OrderValuable
 
     @Override
     public double getPrice() {
-        return price;
+        return price + enhancement.getPrice();
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Enhancement getEnhancement() {
+        return enhancement;
+    }
+
+    public void setEnhancement(Enhancement enhancement) {
+        this.enhancement = enhancement;
     }
 }
