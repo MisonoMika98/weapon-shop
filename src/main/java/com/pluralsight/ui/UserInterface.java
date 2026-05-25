@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class UserInterface
 {
+    // colors
     public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
     public static final String GREEN = "\u001B[32m";
@@ -15,11 +16,13 @@ public class UserInterface
     public static final String BLUE = "\u001B[34m";
     public static final String PURPLE = "\u001B[35m";
     public static final String CYAN = "\u001B[36m";
-
     public static final String RESET = "\u001B[0m";
+
 
     private static Scanner userInput = new Scanner(System.in);
     private static Order order = new Order();
+
+
 
     public static void homeScreen()
     {
@@ -246,7 +249,9 @@ public class UserInterface
         System.out.println("0) Go Back");
 
 
+            String color = null; // this fixes the bug I had that made color variable break after I added the Enhancement object
             String choice = getUserInput("Select an option: ");
+
             switch (choice)
             {
                 case "1":
@@ -266,7 +271,7 @@ public class UserInterface
                     System.out.println("0) Go Back");
 
                     String enhancementSelection = getUserInput("Select an Enhancement here: ");
-                    String color = null; // this fixes the bug I had that made color variable break after I added the Enhancement object
+
 
                     switch (enhancementSelection)
                     {
@@ -374,7 +379,120 @@ public class UserInterface
                     System.out.println();
                     System.out.println("Premium Enhancement List");
                     System.out.println("---------------------------------------------");
+                    System.out.println("A) Dark ($500)");
+                    System.out.println("B) Light ($500)");
+                    System.out.println("C) Silence ($700)");
+                    System.out.println("D) Armor Break ($1000)");
+                    System.out.println("E) Psychic ($1500)");
+                    System.out.println("F) Nuclear ($1500)");
+                    System.out.println("G) Crystal ($3000)");
+                    System.out.println("H) Time ($5000)");
+                    System.out.println("I) Rune ($10000)");
+                    System.out.println("J) Astral ($10000)");
+                    System.out.println("0) Go Back");
 
+                    String enhancementSelection2 = getUserInput("Select an Enhancement here: ");
+
+                    switch (enhancementSelection2)
+                    {
+                        case "A":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement = new Enhancement("Dark", 500);
+                            Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
+                            order.addValuable(weapon);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "B":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement2 = new Enhancement("Light", 500);
+                            Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
+                            order.addValuable(weapon2);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "C":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement3 = new Enhancement("Silence", 700);
+                            Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
+                            order.addValuable(weapon3);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "D":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement4 = new Enhancement("Armor Break", 1000);
+                            Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
+                            order.addValuable(weapon4);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "E":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement5 = new Enhancement("Psychic", 1500);
+                            Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
+                            order.addValuable(weapon5);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "F":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement6 = new Enhancement("Nuclear", 1500);
+                            Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
+                            order.addValuable(weapon6);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "G":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement7 = new Enhancement("Crystal", 3000);
+                            Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
+                            order.addValuable(weapon7);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "H":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement8 = new Enhancement("Time", 5000);
+                            Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
+                            order.addValuable(weapon8);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "I":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement9 = new Enhancement("Rune", 10000);
+                            Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
+                            order.addValuable(weapon9);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "J":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement10 = new Enhancement("Astral", 10000);
+                            Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
+                            order.addValuable(weapon10);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "0":
+                            break;
+
+                        default:
+                            System.out.println();
+                            System.out.println("Invalid option. Please try again.");
+                            System.out.println();
+                    }
                     break;
 
                 case "0":
