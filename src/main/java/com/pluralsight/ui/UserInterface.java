@@ -524,6 +524,7 @@ public class UserInterface
         while (true)
         {
             String choice = getUserInput("Select an option: ");
+
             switch (choice)
             {
                 case "1":
@@ -575,6 +576,12 @@ public class UserInterface
 
             case "Purple":
                 return PURPLE + text + RESET;
+
+            case "Cyan":
+                return CYAN + text + RESET;
+
+            case "Black":
+                return BLACK + text + RESET;
 
             default:
                 return text;
@@ -676,7 +683,7 @@ public class UserInterface
         System.out.println();
         System.out.println("Your Order");
         System.out.println("--------------------------------------------------");
-        System.out.println("[INSERT ORDER HERE]");
+        System.out.println(order.getValuables());
         System.out.println();
         System.out.println("What would you like to do?");
         System.out.println("Y) Confirm Order"); // prints order to the .csv file
