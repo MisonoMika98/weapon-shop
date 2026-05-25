@@ -1,8 +1,6 @@
 package com.pluralsight.ui;
 
-import com.pluralsight.models.Enhancement;
-import com.pluralsight.models.Order;
-import com.pluralsight.models.Weapon;
+import com.pluralsight.models.*;
 
 import java.util.Scanner;
 
@@ -596,11 +594,11 @@ public class UserInterface
         System.out.println("Potion Order");
         System.out.println("----------------------------------");
         System.out.println("Please select a potion");
-        System.out.println("1) Small Potion");
-        System.out.println("2) Medium Potion");
-        System.out.println("3) Large Potion");
-        System.out.println("4) Max Potion");
-        System.out.println("5) Elixir");
+        System.out.println("1) Small Potion (Restores 50HP)");
+        System.out.println("2) Medium Potion (Restores 100HP)");
+        System.out.println("3) Large Potion (Restores 300HP)");
+        System.out.println("4) Max Potion (Restores ALL HP)");
+        System.out.println("5) Elixir (Restores ALL HP and MP)");
         System.out.println("0) Go Back");
 
         while (true)
@@ -610,19 +608,39 @@ public class UserInterface
             switch (choice)
             {
                 case "1":
-                    break;
+                    Potion potion = new Potion("Small Potion", 100);
+                    order.addValuable(potion);
+                    System.out.println(potion.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "2":
-                    break;
+                    Potion potion2 = new Potion("Medium Potion", 200);
+                    order.addValuable(potion2);
+                    System.out.println(potion2.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "3":
-                    break;
+                    Potion potion3 = new Potion("Large Potion", 300);
+                    order.addValuable(potion3);
+                    System.out.println(potion3.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "4":
-                    break;
+                    Potion potion4 = new Potion("Max Potion", 500);
+                    order.addValuable(potion4);
+                    System.out.println(potion4.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "5":
-                    break;
+                    Potion potion5 = new Potion("Elixir", 1000);
+                    order.addValuable(potion5);
+                    System.out.println(potion5.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "0":
                     orderScreen();
@@ -656,13 +674,25 @@ public class UserInterface
             switch (choice)
             {
                 case "1":
-                    break;
+                    Item item = new Item("Smoke Ball", 200);
+                    order.addValuable(item);
+                    System.out.println(item.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "2":
-                    break;
+                    Item item2 = new Item("Teleport Stone", 200);
+                    order.addValuable(item2);
+                    System.out.println(item2.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "3":
-                    break;
+                    Item item3 = new Item("Bomb", 200);
+                    order.addValuable(item3);
+                    System.out.println(item3.getName() + " has been added to your order");
+                    orderScreen();
+                    return;
 
                 case "0":
                     orderScreen();
@@ -683,7 +713,7 @@ public class UserInterface
         System.out.println();
         System.out.println("Your Order");
         System.out.println("--------------------------------------------------");
-        System.out.println(order.getValuables());
+        System.out.println(order.getValuables()); // delete this and start working with a stream, WIP/coming soon to dvd
         System.out.println();
         System.out.println("What would you like to do?");
         System.out.println("Y) Confirm Order"); // prints order to the .csv file
