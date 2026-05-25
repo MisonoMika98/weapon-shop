@@ -39,9 +39,12 @@ public class UserInterface
                 case "1":
                     orderScreen();
                     break;
+
                 case "0":
                     System.exit(0);
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -70,19 +73,25 @@ public class UserInterface
                 case "1":
                     weaponSelectionScreen();
                     break;
+
                 case "2":
                     potionSelectionScreen();
                     break;
+
                 case "3":
                     itemSelectionScreen();
                     break;
+
                 case "4":
                     checkoutScreen();
                     break;
+
                 case "0":
                     homeScreen();
                     break;
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -93,6 +102,8 @@ public class UserInterface
 
     public static void weaponSelectionScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Weapon Order");
         System.out.println("----------------------------------");
@@ -103,8 +114,7 @@ public class UserInterface
         System.out.println("0) Go Back");
         System.out.println();
 
-        while (true)
-        {
+
             String selection = getUserInput("Select an option: ");
             switch (selection)
             {
@@ -122,16 +132,21 @@ public class UserInterface
                         case "A":
                             enhancementSelectionScreen("Sword", "Piercing", 400);
                             break;
+
                         case "B":
                             enhancementSelectionScreen("Katana", "Piercing", 500);
                             break;
+
                         case "C":
                             enhancementSelectionScreen("Spear","Piercing", 1000);
                             break;
+
                         case "0":
                             weaponSelectionScreen();
                             break;
+
                         default:
+                            System.out.println();
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
@@ -151,16 +166,21 @@ public class UserInterface
                         case "A":
                             enhancementSelectionScreen("Staff","Blunt",300);
                             break;
+
                         case "B":
                             enhancementSelectionScreen("Mace","Blunt", 400);
                             break;
+
                         case "C":
                             enhancementSelectionScreen("Hammer","Blunt", 475);
                             break;
+
                         case "0":
                             weaponSelectionScreen();
                             break;
+
                         default:
+                            System.out.println();
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
@@ -180,16 +200,21 @@ public class UserInterface
                         case "A":
                             enhancementSelectionScreen("Bow","Ranged",675);
                             break;
+
                         case "B":
                             enhancementSelectionScreen("Gun","Ranged", 750);
                             break;
+
                         case "C":
                             enhancementSelectionScreen("Boomerang","Ranged", 550);
                             break;
+
                         case "0":
                             weaponSelectionScreen();
                             break;
+
                         default:
+                            System.out.println();
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
@@ -200,6 +225,7 @@ public class UserInterface
                     break;
 
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
 
@@ -211,14 +237,15 @@ public class UserInterface
 
     public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Please select an Enhancement category");
         System.out.println("1) Regular Enhancement (Prices vary from $100-$300)");
         System.out.println("2) Premium Enhancement (Prices vary from $500-$10000)");
         System.out.println("0) Go Back");
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
             switch (choice)
             {
@@ -235,11 +262,11 @@ public class UserInterface
                     System.out.println("G) Wood ($300)");
                     System.out.println("H) Poison ($75)");
                     System.out.println("I) Sleep ($250)");
-                    System.out.println("J) Drain ($250");
+                    System.out.println("J) Drain ($250)");
                     System.out.println("0) Go Back");
 
                     String enhancementSelection = getUserInput("Select an Enhancement here: ");
-                    String color = null; // this fixes the bug I had made color break after I added the Enhancement object
+                    String color = null; // this fixes the bug I had that made color variable break after I added the Enhancement object
 
                     switch (enhancementSelection)
                     {
@@ -249,8 +276,97 @@ public class UserInterface
                             Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
                             order.addValuable(weapon);
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
                             return;
 
+                        case "B":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement2 = new Enhancement("Water", 100);
+                            Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
+                            order.addValuable(weapon2);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "C":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement3 = new Enhancement("Electricity", 100);
+                            Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
+                            order.addValuable(weapon3);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "D":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement4 = new Enhancement("Wind", 200);
+                            Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
+                            order.addValuable(weapon4);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "E":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement5 = new Enhancement("Ice", 200);
+                            Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
+                            order.addValuable(weapon5);
+                            System.out.println(colorize(weaponName, color) +  " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "F":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement6 = new Enhancement("Earth", 200);
+                            Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
+                            order.addValuable(weapon6);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "G":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement7 = new Enhancement("Wood", 300);
+                            Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
+                            order.addValuable(weapon7);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "H":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement8 = new Enhancement("Poison", 75);
+                            Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
+                            order.addValuable(weapon8);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "I":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement9 = new Enhancement("Sleep", 250);
+                            Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
+                            order.addValuable(weapon9);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "J":
+                            color = colorSelectionScreen();
+                            Enhancement enhancement10 = new Enhancement("Drain", 250);
+                            Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
+                            order.addValuable(weapon10);
+                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            orderScreen();
+                            return;
+
+                        case "0":
+                            break;
+
+                        default:
+                            System.out.println();
+                            System.out.println("Invalid option. Please try again.");
+                            System.out.println();
                     }
                 break;
 
@@ -260,10 +376,13 @@ public class UserInterface
                     System.out.println("---------------------------------------------");
 
                     break;
+
                 case "0":
                     weaponSelectionScreen();
                     break;
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -291,40 +410,54 @@ public class UserInterface
             {
                 case "1":
                     return "Red";
+
                 case "2":
                     return "Blue";
+
                 case "3":
                     return "Green";
+
                 case "4":
                     return "Yellow";
+
                 case "5":
                     return "Purple";
+
                 case "6":
                     return "Cyan";
+
                 case "7":
                     return "Black";
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
+                    System.out.println();
             }
         }
     }
 
 
-
+    // used to color the weapon's name when called
     public static String colorize(String text, String color)
     {
         switch (color)
         {
             case "Red":
                 return RED + text + RESET;
+
             case "Blue":
                 return BLUE + text + RESET;
+
             case "Green":
                 return GREEN + text + RESET;
+
             case "Yellow":
                 return YELLOW + text + RESET;
+
             case "Purple":
                 return PURPLE + text + RESET;
+
             default:
                 return text;
         }
@@ -353,18 +486,25 @@ public class UserInterface
             {
                 case "1":
                     break;
+
                 case "2":
                     break;
+
                 case "3":
                     break;
+
                 case "4":
                     break;
+
                 case "5":
                     break;
+
                 case "0":
                     orderScreen();
                     break;
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -392,14 +532,19 @@ public class UserInterface
             {
                 case "1":
                     break;
+
                 case "2":
                     break;
+
                 case "3":
                     break;
+
                 case "0":
                     orderScreen();
                     break;
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -427,10 +572,13 @@ public class UserInterface
             {
                 case "Y":
                     break;
+
                 case "N":
                     orderScreen();
                     break;
+
                 default:
+                    System.out.println();
                     System.out.println("Invalid option. Please try again.");
                     System.out.println();
             }
@@ -439,7 +587,7 @@ public class UserInterface
     }
 
 
-
+    // helper method
     public static String getUserInput(String message)
     {
         System.out.print(message);
