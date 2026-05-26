@@ -8,13 +8,15 @@ public class ReceiptWriter
 {
     public static void writeOrder(Order order)
     {
-        try (FileOutputStream fileOutputStream = new FileOutputStream("orders.csv", true);
+        try (FileOutputStream fileOutputStream = new FileOutputStream("data/orders.csv", true);
              PrintWriter printWriter = new PrintWriter(fileOutputStream))
         {
             for (OrderValuable item : order.getValuables())
             {
-                printWriter.println(item.getName() + "|" + item.getPrice());
+                printWriter.print(item.getName() + "|$" + item.getPrice() + "|");
             }
+            printWriter.print("$" + order.getTotal());
+            printWriter.println();
 
         }
         catch(Exception ex)

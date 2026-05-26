@@ -729,7 +729,8 @@ public class UserInterface
             {
                 case "Y":
                     ReceiptWriter.writeOrder(order);
-                    orderScreen();
+                    Order order = new Order(); // clears the order from the queue/list
+                    homeScreen();
                     return;
 
                 case "N":

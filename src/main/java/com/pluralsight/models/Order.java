@@ -5,8 +5,14 @@ import java.util.List;
 
 public class Order
 {
+    private static int orderCounter = 0; // initializes a static counter
     private List<OrderValuable> valuables = new ArrayList<>();
     private int orderNumber;
+
+    public Order()
+    {
+        this.orderNumber = orderCounter++; // automatically keeps track of order #'s
+    }
 
     public int getOrderNumber() {
         return orderNumber;
