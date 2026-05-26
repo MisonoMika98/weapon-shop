@@ -279,6 +279,7 @@ public class UserInterface
                             Enhancement enhancement = new Enhancement("Fire", 100);
                             Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
                             order.addValuable(weapon);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -288,6 +289,7 @@ public class UserInterface
                             Enhancement enhancement2 = new Enhancement("Water", 100);
                             Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
                             order.addValuable(weapon2);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -297,6 +299,7 @@ public class UserInterface
                             Enhancement enhancement3 = new Enhancement("Electricity", 100);
                             Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
                             order.addValuable(weapon3);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -306,6 +309,7 @@ public class UserInterface
                             Enhancement enhancement4 = new Enhancement("Wind", 200);
                             Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
                             order.addValuable(weapon4);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -315,6 +319,7 @@ public class UserInterface
                             Enhancement enhancement5 = new Enhancement("Ice", 200);
                             Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
                             order.addValuable(weapon5);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) +  " has been added to your order");
                             orderScreen();
                             return;
@@ -324,6 +329,7 @@ public class UserInterface
                             Enhancement enhancement6 = new Enhancement("Earth", 200);
                             Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
                             order.addValuable(weapon6);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -333,6 +339,7 @@ public class UserInterface
                             Enhancement enhancement7 = new Enhancement("Wood", 300);
                             Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
                             order.addValuable(weapon7);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -342,6 +349,7 @@ public class UserInterface
                             Enhancement enhancement8 = new Enhancement("Poison", 75);
                             Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
                             order.addValuable(weapon8);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -351,6 +359,7 @@ public class UserInterface
                             Enhancement enhancement9 = new Enhancement("Sleep", 250);
                             Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
                             order.addValuable(weapon9);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -360,6 +369,7 @@ public class UserInterface
                             Enhancement enhancement10 = new Enhancement("Drain", 250);
                             Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
                             order.addValuable(weapon10);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -399,6 +409,7 @@ public class UserInterface
                             Enhancement enhancement = new Enhancement("Dark", 500);
                             Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
                             order.addValuable(weapon);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -408,6 +419,7 @@ public class UserInterface
                             Enhancement enhancement2 = new Enhancement("Light", 500);
                             Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
                             order.addValuable(weapon2);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -417,6 +429,7 @@ public class UserInterface
                             Enhancement enhancement3 = new Enhancement("Silence", 700);
                             Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
                             order.addValuable(weapon3);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -426,6 +439,7 @@ public class UserInterface
                             Enhancement enhancement4 = new Enhancement("Armor Break", 1000);
                             Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
                             order.addValuable(weapon4);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -435,6 +449,7 @@ public class UserInterface
                             Enhancement enhancement5 = new Enhancement("Psychic", 1500);
                             Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
                             order.addValuable(weapon5);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -444,6 +459,7 @@ public class UserInterface
                             Enhancement enhancement6 = new Enhancement("Nuclear", 1500);
                             Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
                             order.addValuable(weapon6);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -453,6 +469,7 @@ public class UserInterface
                             Enhancement enhancement7 = new Enhancement("Crystal", 3000);
                             Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
                             order.addValuable(weapon7);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -462,6 +479,7 @@ public class UserInterface
                             Enhancement enhancement8 = new Enhancement("Time", 5000);
                             Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
                             order.addValuable(weapon8);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -471,6 +489,7 @@ public class UserInterface
                             Enhancement enhancement9 = new Enhancement("Rune", 10000);
                             Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
                             order.addValuable(weapon9);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -480,6 +499,7 @@ public class UserInterface
                             Enhancement enhancement10 = new Enhancement("Astral", 10000);
                             Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
                             order.addValuable(weapon10);
+                            System.out.println();
                             System.out.println(colorize(weaponName, color) + " has been added to your order");
                             orderScreen();
                             return;
@@ -611,6 +631,7 @@ public class UserInterface
                 case "1":
                     Potion potion = new Potion("Small Potion", 100);
                     order.addValuable(potion);
+                    System.out.println();
                     System.out.println(potion.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -618,6 +639,7 @@ public class UserInterface
                 case "2":
                     Potion potion2 = new Potion("Medium Potion", 200);
                     order.addValuable(potion2);
+                    System.out.println();
                     System.out.println(potion2.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -625,6 +647,7 @@ public class UserInterface
                 case "3":
                     Potion potion3 = new Potion("Large Potion", 300);
                     order.addValuable(potion3);
+                    System.out.println();
                     System.out.println(potion3.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -632,6 +655,7 @@ public class UserInterface
                 case "4":
                     Potion potion4 = new Potion("Max Potion", 500);
                     order.addValuable(potion4);
+                    System.out.println();
                     System.out.println(potion4.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -639,6 +663,7 @@ public class UserInterface
                 case "5":
                     Potion potion5 = new Potion("Elixir", 1000);
                     order.addValuable(potion5);
+                    System.out.println();
                     System.out.println(potion5.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -678,6 +703,7 @@ public class UserInterface
                 case "1":
                     Item item = new Item("Smoke Ball", 200);
                     order.addValuable(item);
+                    System.out.println();
                     System.out.println(item.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -685,6 +711,7 @@ public class UserInterface
                 case "2":
                     Item item2 = new Item("Teleport Stone", 200);
                     order.addValuable(item2);
+                    System.out.println();
                     System.out.println(item2.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -692,6 +719,7 @@ public class UserInterface
                 case "3":
                     Item item3 = new Item("Bomb", 200);
                     order.addValuable(item3);
+                    System.out.println();
                     System.out.println(item3.getName() + " has been added to your order");
                     orderScreen();
                     return;
@@ -719,7 +747,7 @@ public class UserInterface
         System.out.println();
         System.out.println("What would you like to do?");
         System.out.println("Y) Confirm Order"); // prints order to the .csv file
-        System.out.println("N) Cancel Order"); // discards
+        System.out.println("N) Cancel Order"); // discards order
 
         while (true)
         {

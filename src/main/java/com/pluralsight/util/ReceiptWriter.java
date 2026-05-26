@@ -15,8 +15,8 @@ public class ReceiptWriter
             {
                 printWriter.print(item.getName() + "|$" + item.getPrice() + "|");
             }
-            printWriter.print("$" + order.getTotal());
-            printWriter.println();
+            printWriter.print("$" + order.getTotal() + "|#" + order.getOrderNumber()); // outside the for loop so the order # doesn't repeat
+            printWriter.println(); // breaks onto next line inside .csv
 
         }
         catch(Exception ex)

@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Order
 {
-    private static int orderCounter = 0; // initializes a static counter
+    private static int orderCounter = 1; // initializes a static counter that starts at 1
     private List<OrderValuable> valuables = new ArrayList<>();
     private int orderNumber;
 
     public Order()
     {
-        this.orderNumber = orderCounter++; // automatically keeps track of order #'s
+        this.orderNumber = orderCounter++; // automatically keeps track of order #'s going up 1 by 1
     }
 
     public int getOrderNumber() {
