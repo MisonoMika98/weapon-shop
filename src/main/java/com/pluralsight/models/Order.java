@@ -24,10 +24,12 @@ public class Order
     }
 
 
-    // WIP, will try to use stream instead of for loop
+    // helper method that adds all the OrderValuable prices together using a stream
     public double getTotal()
     {
-        double total = 0;
-        return total;
+        return valuables.stream()
+                .mapToDouble(item -> item.getPrice()) // converts all items into doubles to get their price
+                .sum(); // adds everything
+
     }
 }

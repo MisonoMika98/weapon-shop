@@ -662,9 +662,9 @@ public class UserInterface
         System.out.println("Item Order");
         System.out.println("----------------------------------");
         System.out.println("Please select an item");
-        System.out.println("1) Smoke Ball");
-        System.out.println("2) Teleport Stone");
-        System.out.println("3) Bomb");
+        System.out.println("1) Smoke Ball (Escape from any Battle)");
+        System.out.println("2) Teleport Stone (Escape from any dungeon)");
+        System.out.println("3) Bomb (Deals damage)");
         System.out.println("0) Go Back");
 
         while (true)
