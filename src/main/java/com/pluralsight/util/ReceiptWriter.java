@@ -6,10 +6,12 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// one thing I have left to add is a way to make it so it prints additional weapon info (enhancement + color)
 public class ReceiptWriter
 {
     public static void writeOrder(Order order)
     {
+        // shoutout to Omar M. for helping me with this class
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String formattedDate = date.format(formatter);

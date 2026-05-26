@@ -248,7 +248,9 @@ public class UserInterface
         System.out.println("0) Go Back");
 
 
-            String color = null; // this fixes the bug I had that made color variable break after I added the Enhancement object
+            // this fixes the bug I had that made color variable break after I added the Enhancement object
+            String color = null;
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -530,6 +532,7 @@ public class UserInterface
 
     public static String colorSelectionScreen()
     {
+        // uses the final color strings at the top of the class, RESET makes it so they don't bleed into the rest of the terminal's text
         System.out.println();
         System.out.println("Please select a color for your weapon");
         System.out.println("1) " + RED + "Red" + RESET);
@@ -606,6 +609,13 @@ public class UserInterface
                 return text;
         }
     }
+
+
+        // coming soon, could be scrapped if time is tight...
+//    public static void customWeaponNameScreen()
+//    {
+//
+//    }
 
 
 
@@ -687,11 +697,10 @@ public class UserInterface
         System.out.println();
         System.out.println("Item Order");
         System.out.println("----------------------------------");
-        System.out.println("All Items are $200");
-        System.out.println("Please select an item");
-        System.out.println("1) Smoke Ball (Escape from any Battle)");
-        System.out.println("2) Teleport Stone (Escape from any dungeon)");
-        System.out.println("3) Bomb (Deals damage)");
+        System.out.println("Please select an item:");
+        System.out.println("1) Smoke Ball (Escape from any Battle) ($200)");
+        System.out.println("2) Teleport Stone (Escape from any dungeon) ($200)");
+        System.out.println("3) Bomb (Deals damage) ($200)");
         System.out.println("0) Go Back");
 
         while (true)
@@ -737,17 +746,38 @@ public class UserInterface
     }
 
 
-
+    // STILL not finished
     public static void checkoutScreen()
     {
         System.out.println();
         System.out.println("Your Order");
         System.out.println("--------------------------------------------------");
-        System.out.println(order.getValuables()); // delete this and start working with a stream
+
+        // turns the list into a stream
+        order.getValuables().stream()
+                // makes it so ONLY Weapon objects go through the .filter, no items or potions allowed!
+                .filter(item -> item instanceof Weapon)
+                // .map transforms the items into Weapons, because of this I can access the colorize() method and use it inside of .forEach()
+                .map(item -> (Weapon) item)
+                // .forEach Weapon, prints
+                .forEach(w -> System.out.println(colorize(w.getName(), w.getColor()) + ", $" + w.getPrice()));
+
+        // turns the list into a stream
+        order.getValuables().stream()
+                // makes it so anything that's NOT a Weapon goes through the .filter, only potions and items!
+                .filter(item -> !(item instanceof Weapon))
+                // .forEach item that isn't a Weapon, prints
+                .forEach(item -> System.out.println(item.getName() + ", $" + item.getPrice()));
+
+        // prints the total price using my getTotal() method
+        System.out.println("Total: $" + order.getTotal());
+
         System.out.println();
         System.out.println("What would you like to do?");
-        System.out.println("Y) Confirm Order"); // prints order to the .csv file
-        System.out.println("N) Cancel Order"); // discards order
+        // prints the order into its own .txt receipt file inside the receipts directory
+        System.out.println("Y) Confirm Order");
+        // discards order completely, NOTE: should add a way to make it so customer can remove individual valuables from order
+        System.out.println("N) Cancel Order");
 
         while (true)
         {
@@ -757,7 +787,8 @@ public class UserInterface
             {
                 case "Y":
                     ReceiptWriter.writeOrder(order);
-                    Order order = new Order(); // clears the order from the queue/list
+                    // clears the order from the queue/list
+                    Order order = new Order();
                     homeScreen();
                     return;
 
