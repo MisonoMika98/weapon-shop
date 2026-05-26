@@ -1,6 +1,7 @@
 package com.pluralsight.ui;
 
 import com.pluralsight.models.*;
+import com.pluralsight.util.ReceiptWriter;
 
 import java.util.Scanner;
 
@@ -661,6 +662,7 @@ public class UserInterface
         System.out.println();
         System.out.println("Item Order");
         System.out.println("----------------------------------");
+        System.out.println("All Items are $200");
         System.out.println("Please select an item");
         System.out.println("1) Smoke Ball (Escape from any Battle)");
         System.out.println("2) Teleport Stone (Escape from any dungeon)");
@@ -713,7 +715,7 @@ public class UserInterface
         System.out.println();
         System.out.println("Your Order");
         System.out.println("--------------------------------------------------");
-        System.out.println(order.getValuables()); // delete this and start working with a stream, WIP/coming soon to dvd
+        System.out.println(order.getValuables()); // delete this and start working with a stream
         System.out.println();
         System.out.println("What would you like to do?");
         System.out.println("Y) Confirm Order"); // prints order to the .csv file
@@ -726,7 +728,9 @@ public class UserInterface
             switch (choice)
             {
                 case "Y":
-                    break;
+                    ReceiptWriter.writeOrder(order);
+                    orderScreen();
+                    return;
 
                 case "N":
                     orderScreen();

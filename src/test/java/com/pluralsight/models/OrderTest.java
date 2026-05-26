@@ -13,7 +13,7 @@ class OrderGetPriceStreamTest
     Potion testPotion = new Potion("Elixir", 1000);
 
     @Test
-    void getPriceStreamTest()
+    void getPriceStreamTotalOfAllValuables()
     {
         // arrange
         testOrder.addValuable(testWeapon);

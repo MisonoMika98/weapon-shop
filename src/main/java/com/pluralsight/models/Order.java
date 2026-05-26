@@ -6,7 +6,15 @@ import java.util.List;
 public class Order
 {
     private List<OrderValuable> valuables = new ArrayList<>();
+    private int orderNumber;
 
+    public int getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
+    }
 
     public void addValuable(OrderValuable valuable)
     {
