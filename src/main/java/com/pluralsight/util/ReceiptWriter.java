@@ -19,13 +19,13 @@ public class ReceiptWriter
         try (FileOutputStream fileOutputStream = new FileOutputStream("receipts/" + formattedDate + ".txt");
              PrintWriter printWriter = new PrintWriter(fileOutputStream))
         {
+            printWriter.println("Order #: " + order.getOrderNumber());
             for (OrderValuable item : order.getValuables())
             {
                 printWriter.println("Valuable:");
-                printWriter.println(item.getName() + " $" + item.getPrice());
+                printWriter.println(item.getDetails());
 
             }
-            printWriter.println("Order #: " + order.getOrderNumber());
             printWriter.println("Order Date: " + formattedDate);
             printWriter.println("Total Price: $" + order.getTotal());
 

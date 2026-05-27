@@ -4,4 +4,5 @@ public interface OrderValuable
 {
     String getName();
     double getPrice();
+    String getDetails();
 }

@@ -28,4 +28,12 @@ public class Enhancement implements OrderValuable
     public void setPrice(double price) {
         this.price = price;
     }
+
+
+    // used in Weapon class, so it can be used in ReceiptWriter
+    @Override
+    public String getDetails()
+    {
+        return name + " $" + price;
+    }
 }

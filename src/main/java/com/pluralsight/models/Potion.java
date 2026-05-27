@@ -28,4 +28,12 @@ public class Potion implements OrderValuable
     public void setPrice(double price) {
         this.price = price;
     }
+
+
+    // user in ReceiptWriter
+    @Override
+    public String getDetails()
+    {
+        return "Potion: " + name + " | Price: $" + price;
+    }
 }

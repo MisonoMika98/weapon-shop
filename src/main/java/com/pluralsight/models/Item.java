@@ -28,4 +28,11 @@ public class Item implements OrderValuable
     public void setPrice(double price) {
         this.price = price;
     }
+
+    // used in ReceiptWriter
+    @Override
+    public String getDetails()
+    {
+        return "Item: " + name + " | Price: $" + price;
+    }
 }

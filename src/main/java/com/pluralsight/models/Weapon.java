@@ -58,4 +58,15 @@ public class Weapon implements OrderValuable
     public void setEnhancement(Enhancement enhancement) {
         this.enhancement = enhancement;
     }
+
+
+
+    // exists so I can print additional weapon details onto the receipt inside ReceiptWriter
+    @Override
+    public String getDetails()
+    {
+        return "Weapon: " + name + " | Type: " + weaponType +
+            " | Color: " + color  + " | Enhancement: " + enhancement.getDetails() + " | Price: $" + getPrice();
+    }
+
 }
