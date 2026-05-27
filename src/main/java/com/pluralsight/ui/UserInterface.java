@@ -3,6 +3,7 @@ package com.pluralsight.ui;
 import com.pluralsight.models.*;
 import com.pluralsight.util.ReceiptWriter;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface
@@ -777,7 +778,7 @@ public class UserInterface
         // prints the order into its own .txt receipt file inside the receipts directory
         System.out.println("Y) Confirm Order");
         // remove an individual item from order
-        System.out.println("R) Remove an Item from your Order");
+        System.out.println("R) Remove an Valuable from your Order");
         // shows the user their order again
         System.out.println("S) Show my Order again");
         // discards order completely
@@ -792,14 +793,21 @@ public class UserInterface
             switch (choice)
             {
                 case "Y":
+                    System.out.println();
+                    System.out.println("Your Order has been confirmed");
+                    System.out.println();
+                    System.out.println("Printing Receipt......");
+                    System.out.println();
                     ReceiptWriter.writeOrder(order);
                     // wipes the order
                     order = new Order();
+                    System.out.println("Receipt printed, going back to home screen...");
+                    System.out.println();
                     homeScreen();
                     return;
 
                 case "R":
-                    // INSERT NEW SCREEN HERE... ZZZ
+                    removeSingleValuableFromOrderScreen();
                     break;
 
                 case "S":
@@ -807,8 +815,12 @@ public class UserInterface
                     return;
 
                 case "N":
+                    System.out.println();
+                    System.out.println("Your order has been canceled");
                     // wipes the order
                     order = new Order();
+                    System.out.println();
+                    System.out.println("Going back to home screen...");
                     homeScreen();
                     return;
 
@@ -824,6 +836,48 @@ public class UserInterface
         }
 
     }
+
+
+
+    public static void removeSingleValuableFromOrderScreen()
+    {
+        System.out.println();
+        System.out.println("Select a Valuable to remove:");
+        System.out.println("----------------------------------------------------");
+
+        // calls the list as a list (no stream)
+        List<OrderValuable> valuables = order.getValuables();
+        // prints the list using its index
+        for (int i = 0; i < valuables.size(); i++)
+        {
+            // counts up automatically, for each individual valuable and prints it
+            System.out.println((i + 1) + ") " + valuables.get(i).getDetails());
+        }
+        System.out.println("0) Go Back");
+
+        while (true)
+        {
+            String choice = getUserInput("Select an item to remove: ");
+
+            // goes back to the previous screen
+            if (choice.equals("0"))
+            {
+                checkoutScreen();
+                return;
+            }
+
+            try
+            {
+
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Invalid format, please try again");
+            }
+        }
+
+    }
+
 
 
     // helper method
