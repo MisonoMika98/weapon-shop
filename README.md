@@ -2,4 +2,6 @@
 Terminal app built in Java that lets you create and buy a custom weapon with an enhancement
 
 # MORE INFO COMING SOON
-[hikari.webm](https://github.com/user-attachments/assets/fdc38050-a9f7-40c9-b6c4-dac8ded38498)
+
+<img width="500" height="500" alt="mikafish" src="https://github.com/user-attachments/assets/0ab62cc8-2a83-4761-a7d3-ec36ec38eee9" />
+
