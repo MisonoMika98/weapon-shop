@@ -25,6 +25,8 @@ public class UserInterface
 
     public static void homeScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Weapon Shop");
         System.out.println("------------------------------------");
@@ -32,8 +34,7 @@ public class UserInterface
         System.out.println("0) Exit");
         System.out.println();
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -43,6 +44,7 @@ public class UserInterface
                     break;
 
                 case "0":
+                    System.out.println("See you next time!");
                     System.exit(0);
 
                 default:
@@ -58,6 +60,8 @@ public class UserInterface
 
     public static void orderScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Order Menu");
         System.out.println("----------------------------------");
@@ -68,8 +72,7 @@ public class UserInterface
         System.out.println("0) Cancel Order");
         System.out.println();
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -91,6 +94,8 @@ public class UserInterface
                     break;
 
                 case "0":
+                    System.out.println();
+                    System.out.println("Going back to home screen...");
                     homeScreen();
                     break;
 
@@ -111,7 +116,7 @@ public class UserInterface
         {
         System.out.println();
         System.out.println("Weapon Order");
-        System.out.println("----------------------------------");
+        System.out.println("-------------------------------------------");
         System.out.println("Please select a Weapon Type");
         System.out.println("1) Piercing Weapon (Base Price: $300)");
         System.out.println("2) Blunt Weapon (Base Price: $250)");
@@ -120,7 +125,7 @@ public class UserInterface
         System.out.println();
 
 
-            String selection = getUserInput("Select an option: ");
+            String selection = getUserInput("Select a weapon type here: ");
             switch (selection)
             {
                 case "1":
@@ -131,7 +136,7 @@ public class UserInterface
                     System.out.println("C) Spear ($300)");
                     System.out.println("0) Go Back");
 
-                    String choice = getUserInput("Select an option: ");
+                    String choice = getUserInput("Select a weapon here: ");
                     switch (choice)
                     {
                         case "A":
@@ -147,7 +152,6 @@ public class UserInterface
                             break;
 
                         case "0":
-                            weaponSelectionScreen();
                             break;
 
                         default:
@@ -165,7 +169,7 @@ public class UserInterface
                     System.out.println("C) Hammer ($225)");
                     System.out.println("0) Go Back");
 
-                    String choice2 = getUserInput("Select an option: ");
+                    String choice2 = getUserInput("Select a weapon here: ");
                     switch (choice2)
                     {
                         case "A":
@@ -181,7 +185,6 @@ public class UserInterface
                             break;
 
                         case "0":
-                            weaponSelectionScreen();
                             break;
 
                         default:
@@ -199,7 +202,7 @@ public class UserInterface
                     System.out.println("C) Boomerang ($50)");
                     System.out.println("0) Go Back");
 
-                    String choice3 = getUserInput("Select an option: ");
+                    String choice3 = getUserInput("Select a weapon here: ");
                     switch (choice3)
                     {
                         case "A":
@@ -215,7 +218,6 @@ public class UserInterface
                             break;
 
                         case "0":
-                            weaponSelectionScreen();
                             break;
 
                         default:
@@ -226,8 +228,9 @@ public class UserInterface
                     break;
 
                 case "0":
-                    orderScreen();
-                    break;
+                    System.out.println();
+                    System.out.println("Going back to order screen...");
+                    return;
 
                 default:
                     System.out.println();
@@ -249,7 +252,7 @@ public class UserInterface
         System.out.println("Please select an Enhancement category");
         System.out.println("1) Regular Enhancement (Prices vary from $100-$300)");
         System.out.println("2) Premium Enhancement (Prices vary from $500-$10000)");
-        System.out.println("0) Go Back");
+        System.out.println("0) Go Back To Start");
 
 
             // this fixes the bug I had that made color variable break after I added the Enhancement object
@@ -257,7 +260,7 @@ public class UserInterface
             // see above
             String finalWeaponName = null;
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Select an enhancement category here: ");
 
             switch (choice)
             {
@@ -605,8 +608,7 @@ public class UserInterface
                 case "0":
                     System.out.println();
                     System.out.println("Going back to weapon selection screen...");
-                    weaponSelectionScreen();
-                    break;
+                    return;
 
                 default:
                     System.out.println();
@@ -621,6 +623,8 @@ public class UserInterface
 
     public static String colorSelectionScreen()
     {
+        while (true)
+        {
         // uses the final color strings at the top of the class, RESET makes it so they don't bleed into the rest of the terminal's text
         System.out.println();
         System.out.println("Please select a color for your weapon");
@@ -633,8 +637,7 @@ public class UserInterface
         System.out.println("6) " + CYAN + "Cyan" + RESET);
         System.out.println("7) " + BLACK + "Black" + RESET);
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -714,18 +717,20 @@ public class UserInterface
     // uses most of the same logic as colorSelectionScreen() and colorize()
     public static String customWeaponNameScreen(String weaponName)
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Would you like to give your weapon a name?");
         System.out.println("Y) Yes");
         System.out.println("X) No");
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
             {
                 case "Y":
+                    System.out.println();
                     return getUserWeaponName("Enter a name for your Weapon here: ");
 
                 case "X":
@@ -745,6 +750,8 @@ public class UserInterface
 
     public static void potionSelectionScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Potion Order");
         System.out.println("----------------------------------");
@@ -756,8 +763,7 @@ public class UserInterface
         System.out.println("5) Elixir (Restores ALL HP and MP)");
         System.out.println("0) Go Back");
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -815,8 +821,7 @@ public class UserInterface
                 case "0":
                     System.out.println();
                     System.out.println("Going back to order screen...");
-                    orderScreen();
-                    break;
+                    return;
 
                 default:
                     System.out.println();
@@ -831,6 +836,8 @@ public class UserInterface
 
     public static void itemSelectionScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Item Order");
         System.out.println("----------------------------------");
@@ -840,8 +847,7 @@ public class UserInterface
         System.out.println("3) Bomb (Deals damage) ($200)");
         System.out.println("0) Go Back");
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an option: ");
 
             switch (choice)
@@ -879,8 +885,7 @@ public class UserInterface
                 case "0":
                     System.out.println();
                     System.out.println("Going back to order screen...");
-                    orderScreen();
-                    break;
+                    return;
 
                 default:
                     System.out.println();
@@ -895,6 +900,8 @@ public class UserInterface
 
     public static void checkoutScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Your Order");
         System.out.println("--------------------------------------------------");
@@ -923,7 +930,7 @@ public class UserInterface
         // prints the order into its own .txt receipt file inside the receipts directory
         System.out.println("Y) Confirm Order");
         // remove an individual item from order
-        System.out.println("R) Remove an Valuable from your Order");
+        System.out.println("R) Remove a Valuable from your Order");
         // shows the user their order again
         System.out.println("S) Show my Order again");
         // discards order completely
@@ -931,8 +938,7 @@ public class UserInterface
         // goes back to the last screen, (add another item)
         System.out.println("0) Go Back To Order Screen (Forgot something?)");
 
-        while (true)
-        {
+
             String choice = getUserInput("Make your selection here: ");
 
             switch (choice)
@@ -956,8 +962,7 @@ public class UserInterface
                     break;
 
                 case "S":
-                    checkoutScreen();
-                    return;
+                    break;
 
                 case "N":
                     System.out.println();
@@ -981,7 +986,6 @@ public class UserInterface
                     System.out.println();
             }
         }
-
     }
 
 
@@ -989,6 +993,8 @@ public class UserInterface
 
     public static void removeSingleValuableFromOrderScreen()
     {
+        while (true)
+        {
         System.out.println();
         System.out.println("Select a Valuable to remove:");
         System.out.println("----------------------------------------------------");
@@ -1003,8 +1009,7 @@ public class UserInterface
         }
         System.out.println("0) Go Back");
 
-        while (true)
-        {
+
             String choice = getUserInput("Select an item to remove: ");
 
             // goes back to the previous screen
@@ -1012,7 +1017,6 @@ public class UserInterface
             {
                 System.out.println();
                 System.out.println("Going back to checkout screen...");
-                checkoutScreen();
                 return;
             }
 
@@ -1026,6 +1030,7 @@ public class UserInterface
                 {
                     // prints to let the user know what got removed
                     System.out.println(valuables.get(index).getName() + " has been removed from your order");
+                    System.out.println();
                     // removes the object from the list
                     order.removeValuable(valuables.get(index));
                 }
@@ -1058,6 +1063,7 @@ public class UserInterface
         System.out.print(message);
         return userInput.nextLine().trim().toUpperCase();
     }
+
 
 
 
