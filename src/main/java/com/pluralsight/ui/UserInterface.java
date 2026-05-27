@@ -23,7 +23,6 @@ public class UserInterface
     private static Order order = new Order();
 
 
-
     public static void homeScreen()
     {
         System.out.println();
@@ -53,6 +52,8 @@ public class UserInterface
             }
         }
     }
+
+
 
 
     public static void orderScreen()
@@ -100,6 +101,7 @@ public class UserInterface
             }
         }
     }
+
 
 
 
@@ -238,6 +240,7 @@ public class UserInterface
 
 
 
+
     public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
     {
         while (true)
@@ -251,6 +254,8 @@ public class UserInterface
 
             // this fixes the bug I had that made color variable break after I added the Enhancement object
             String color = null;
+            // see above
+            String finalWeaponName = null;
 
             String choice = getUserInput("Select an option: ");
 
@@ -279,101 +284,141 @@ public class UserInterface
                     {
                         case "A":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement = new Enhancement("Fire", 100);
-                            Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
+                            Weapon weapon = new Weapon(finalWeaponName, weaponType, color, price, enhancement);
                             order.addValuable(weapon);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "B":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement2 = new Enhancement("Water", 100);
-                            Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
+                            Weapon weapon2 = new Weapon(finalWeaponName, weaponType, color, price, enhancement2);
                             order.addValuable(weapon2);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "C":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement3 = new Enhancement("Electricity", 100);
-                            Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
+                            Weapon weapon3 = new Weapon(finalWeaponName, weaponType, color, price, enhancement3);
                             order.addValuable(weapon3);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "D":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement4 = new Enhancement("Wind", 200);
-                            Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
+                            Weapon weapon4 = new Weapon(finalWeaponName, weaponType, color, price, enhancement4);
                             order.addValuable(weapon4);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "E":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement5 = new Enhancement("Ice", 200);
-                            Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
+                            Weapon weapon5 = new Weapon(finalWeaponName, weaponType, color, price, enhancement5);
                             order.addValuable(weapon5);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) +  " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) +  " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "F":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement6 = new Enhancement("Earth", 200);
-                            Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
+                            Weapon weapon6 = new Weapon(finalWeaponName, weaponType, color, price, enhancement6);
                             order.addValuable(weapon6);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "G":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement7 = new Enhancement("Wood", 300);
-                            Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
+                            Weapon weapon7 = new Weapon(finalWeaponName, weaponType, color, price, enhancement7);
                             order.addValuable(weapon7);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "H":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement8 = new Enhancement("Poison", 75);
-                            Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
+                            Weapon weapon8 = new Weapon(finalWeaponName, weaponType, color, price, enhancement8);
                             order.addValuable(weapon8);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "I":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement9 = new Enhancement("Sleep", 250);
-                            Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
+                            Weapon weapon9 = new Weapon(finalWeaponName, weaponType, color, price, enhancement9);
                             order.addValuable(weapon9);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "J":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement10 = new Enhancement("Drain", 250);
-                            Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
+                            Weapon weapon10 = new Weapon(finalWeaponName, weaponType, color, price, enhancement10);
                             order.addValuable(weapon10);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
@@ -409,101 +454,141 @@ public class UserInterface
                     {
                         case "A":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement = new Enhancement("Dark", 500);
-                            Weapon weapon = new Weapon(weaponName, weaponType, color, price, enhancement);
+                            Weapon weapon = new Weapon(finalWeaponName, weaponType, color, price, enhancement);
                             order.addValuable(weapon);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "B":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement2 = new Enhancement("Light", 500);
-                            Weapon weapon2 = new Weapon(weaponName, weaponType, color, price, enhancement2);
+                            Weapon weapon2 = new Weapon(finalWeaponName, weaponType, color, price, enhancement2);
                             order.addValuable(weapon2);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "C":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement3 = new Enhancement("Silence", 700);
-                            Weapon weapon3 = new Weapon(weaponName, weaponType, color, price, enhancement3);
+                            Weapon weapon3 = new Weapon(finalWeaponName, weaponType, color, price, enhancement3);
                             order.addValuable(weapon3);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "D":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement4 = new Enhancement("Armor Break", 1000);
-                            Weapon weapon4 = new Weapon(weaponName, weaponType, color, price, enhancement4);
+                            Weapon weapon4 = new Weapon(finalWeaponName, weaponType, color, price, enhancement4);
                             order.addValuable(weapon4);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "E":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement5 = new Enhancement("Psychic", 1500);
-                            Weapon weapon5 = new Weapon(weaponName, weaponType, color, price, enhancement5);
+                            Weapon weapon5 = new Weapon(finalWeaponName, weaponType, color, price, enhancement5);
                             order.addValuable(weapon5);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "F":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement6 = new Enhancement("Nuclear", 1500);
-                            Weapon weapon6 = new Weapon(weaponName, weaponType, color, price, enhancement6);
+                            Weapon weapon6 = new Weapon(finalWeaponName, weaponType, color, price, enhancement6);
                             order.addValuable(weapon6);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "G":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement7 = new Enhancement("Crystal", 3000);
-                            Weapon weapon7 = new Weapon(weaponName, weaponType, color, price, enhancement7);
+                            Weapon weapon7 = new Weapon(finalWeaponName, weaponType, color, price, enhancement7);
                             order.addValuable(weapon7);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "H":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement8 = new Enhancement("Time", 5000);
-                            Weapon weapon8 = new Weapon(weaponName, weaponType, color, price, enhancement8);
+                            Weapon weapon8 = new Weapon(finalWeaponName, weaponType, color, price, enhancement8);
                             order.addValuable(weapon8);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "I":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement9 = new Enhancement("Rune", 10000);
-                            Weapon weapon9 = new Weapon(weaponName, weaponType, color, price, enhancement9);
+                            Weapon weapon9 = new Weapon(finalWeaponName, weaponType, color, price, enhancement9);
                             order.addValuable(weapon9);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
                         case "J":
                             color = colorSelectionScreen();
+                            finalWeaponName = customWeaponNameScreen(weaponName);
+
                             Enhancement enhancement10 = new Enhancement("Astral", 10000);
-                            Weapon weapon10 = new Weapon(weaponName, weaponType, color, price, enhancement10);
+                            Weapon weapon10 = new Weapon(finalWeaponName, weaponType, color, price, enhancement10);
                             order.addValuable(weapon10);
                             System.out.println();
-                            System.out.println(colorize(weaponName, color) + " has been added to your order");
+                            System.out.println(colorize(finalWeaponName, color) + " has been added to your order");
+                            System.out.println();
+                            System.out.println("Returning to order screen...");
                             orderScreen();
                             return;
 
@@ -518,6 +603,8 @@ public class UserInterface
                     break;
 
                 case "0":
+                    System.out.println();
+                    System.out.println("Going back to weapon selection screen...");
                     weaponSelectionScreen();
                     break;
 
@@ -531,11 +618,13 @@ public class UserInterface
 
 
 
+
     public static String colorSelectionScreen()
     {
         // uses the final color strings at the top of the class, RESET makes it so they don't bleed into the rest of the terminal's text
         System.out.println();
         System.out.println("Please select a color for your weapon");
+        System.out.println("0) " + RESET + "No Color" + RESET);
         System.out.println("1) " + RED + "Red" + RESET);
         System.out.println("2) " + BLUE + "Blue" + RESET);
         System.out.println("3) " + GREEN + "Green" + RESET);
@@ -550,6 +639,9 @@ public class UserInterface
 
             switch (choice)
             {
+                case "0":
+                    return "No Color";
+
                 case "1":
                     return "Red";
 
@@ -580,11 +672,16 @@ public class UserInterface
     }
 
 
+
+
     // used to color the weapon's name when called
     public static String colorize(String text, String color)
     {
         switch (color)
         {
+            case "No Color":
+                return text;
+
             case "Red":
                 return RED + text + RESET;
 
@@ -612,11 +709,37 @@ public class UserInterface
     }
 
 
-        // coming soon, could be scrapped if time is tight...
-//    public static void customWeaponNameScreen()
-//    {
-//
-//    }
+
+
+    // uses most of the same logic as colorSelectionScreen() and colorize()
+    public static String customWeaponNameScreen(String weaponName)
+    {
+        System.out.println();
+        System.out.println("Would you like to give your weapon a name?");
+        System.out.println("Y) Yes");
+        System.out.println("X) No");
+
+        while (true)
+        {
+            String choice = getUserInput("Select an option: ");
+
+            switch (choice)
+            {
+                case "Y":
+                    return getUserWeaponName("Enter a name for your Weapon here: ");
+
+                case "X":
+                    // keeps weaponName as the default no name
+                    return weaponName;
+
+                default:
+                System.out.println();
+                System.out.println("Invalid option. Please try again.");
+                System.out.println();
+            }
+        }
+    }
+
 
 
 
@@ -644,6 +767,8 @@ public class UserInterface
                     order.addValuable(potion);
                     System.out.println();
                     System.out.println(potion.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -652,6 +777,8 @@ public class UserInterface
                     order.addValuable(potion2);
                     System.out.println();
                     System.out.println(potion2.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -660,6 +787,8 @@ public class UserInterface
                     order.addValuable(potion3);
                     System.out.println();
                     System.out.println(potion3.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -668,6 +797,8 @@ public class UserInterface
                     order.addValuable(potion4);
                     System.out.println();
                     System.out.println(potion4.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -676,10 +807,14 @@ public class UserInterface
                     order.addValuable(potion5);
                     System.out.println();
                     System.out.println(potion5.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
                 case "0":
+                    System.out.println();
+                    System.out.println("Going back to order screen...");
                     orderScreen();
                     break;
 
@@ -690,6 +825,7 @@ public class UserInterface
             }
         }
     }
+
 
 
 
@@ -715,6 +851,8 @@ public class UserInterface
                     order.addValuable(item);
                     System.out.println();
                     System.out.println(item.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -723,6 +861,8 @@ public class UserInterface
                     order.addValuable(item2);
                     System.out.println();
                     System.out.println(item2.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
@@ -731,10 +871,14 @@ public class UserInterface
                     order.addValuable(item3);
                     System.out.println();
                     System.out.println(item3.getName() + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
                     orderScreen();
                     return;
 
                 case "0":
+                    System.out.println();
+                    System.out.println("Going back to order screen...");
                     orderScreen();
                     break;
 
@@ -747,7 +891,8 @@ public class UserInterface
     }
 
 
-    // STILL not finished
+
+
     public static void checkoutScreen()
     {
         System.out.println();
@@ -784,7 +929,7 @@ public class UserInterface
         // discards order completely
         System.out.println("N) Cancel Order");
         // goes back to the last screen, (add another item)
-        System.out.println("0) Go Back (Forgot something?)");
+        System.out.println("0) Go Back To Order Screen (Forgot something?)");
 
         while (true)
         {
@@ -825,6 +970,8 @@ public class UserInterface
                     return;
 
                 case "0":
+                    System.out.println();
+                    System.out.println("Going back to order screen...");
                     orderScreen();
                     break;
 
@@ -839,6 +986,7 @@ public class UserInterface
 
 
 
+
     public static void removeSingleValuableFromOrderScreen()
     {
         System.out.println();
@@ -850,7 +998,7 @@ public class UserInterface
         // prints the list using its index
         for (int i = 0; i < valuables.size(); i++)
         {
-            // counts up automatically, for each individual valuable and prints it
+            // counts up automatically, for each individual valuable using the index and prints it in a line
             System.out.println((i + 1) + ") " + valuables.get(i).getDetails());
         }
         System.out.println("0) Go Back");
@@ -862,17 +1010,40 @@ public class UserInterface
             // goes back to the previous screen
             if (choice.equals("0"))
             {
+                System.out.println();
+                System.out.println("Going back to checkout screen...");
                 checkoutScreen();
                 return;
             }
 
+
             try
             {
-
+                // subtracts the user's input by 1, so the user's input matches with the array's index
+                // uses parseInt so it works with my helper method
+                int index = Integer.parseInt(choice) - 1;
+                if (index >= 0 && index < valuables.size())
+                {
+                    // prints to let the user know what got removed
+                    System.out.println(valuables.get(index).getName() + " has been removed from your order");
+                    // removes the object from the list
+                    order.removeValuable(valuables.get(index));
+                }
+                // if the user inputs a number that the array hasn't reached (i.e. order has 3 items, and they input 4)
+                else
+                {
+                    System.out.println();
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+                }
             }
+
+            // makes it so if the user doesn't input a number, the program won't crash
             catch(NumberFormatException e)
             {
-                System.out.println("Invalid format, please try again");
+                System.out.println();
+                System.out.println("Invalid format. Please enter a number and try again.");
+                System.out.println();
             }
         }
 
@@ -880,11 +1051,21 @@ public class UserInterface
 
 
 
-    // helper method
+
+    // helper method, thx Gregor
     public static String getUserInput(String message)
     {
         System.out.print(message);
         return userInput.nextLine().trim().toUpperCase();
+    }
+
+
+
+    // helper method that exists only for the custom weapon name
+    public static String getUserWeaponName(String message)
+    {
+        System.out.print(message);
+        return userInput.nextLine();
     }
 
 }
