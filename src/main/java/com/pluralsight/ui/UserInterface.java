@@ -776,23 +776,43 @@ public class UserInterface
         System.out.println("What would you like to do?");
         // prints the order into its own .txt receipt file inside the receipts directory
         System.out.println("Y) Confirm Order");
-        // discards order completely, NOTE: should add a way to make it so customer can remove individual valuables from order
+        // remove an individual item from order
+        System.out.println("R) Remove an Item from your Order");
+        // shows the user their order again
+        System.out.println("S) Show my Order again");
+        // discards order completely
         System.out.println("N) Cancel Order");
+        // goes back to the last screen, (add another item)
+        System.out.println("0) Go Back (Forgot something?)");
 
         while (true)
         {
-            String choice = getUserInput("Pick here: ");
+            String choice = getUserInput("Make your selection here: ");
 
             switch (choice)
             {
                 case "Y":
                     ReceiptWriter.writeOrder(order);
-                    // clears the order from the queue/list
-                    Order order = new Order();
+                    // wipes the order
+                    order = new Order();
                     homeScreen();
                     return;
 
+                case "R":
+                    // INSERT NEW SCREEN HERE... ZZZ
+                    break;
+
+                case "S":
+                    checkoutScreen();
+                    return;
+
                 case "N":
+                    // wipes the order
+                    order = new Order();
+                    homeScreen();
+                    return;
+
+                case "0":
                     orderScreen();
                     break;
 
