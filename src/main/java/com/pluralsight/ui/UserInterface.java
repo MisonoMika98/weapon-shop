@@ -3,6 +3,8 @@ package com.pluralsight.ui;
 import com.pluralsight.models.*;
 import com.pluralsight.util.ReceiptWriter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,13 +29,15 @@ public class UserInterface
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Blacksmith");
-        System.out.println("------------------------------------");
-        System.out.println("1) New Weapon Order");
-        System.out.println("2) View Past Receipts");
-        System.out.println("0) Exit");
-        System.out.println();
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("       The Blacksmith Shop      ");
+            System.out.println("================================");
+            System.out.println("  1) New Order");
+            System.out.println("  2) View Past Receipts");
+            System.out.println("  0) Exit");
+            System.out.println("================================");
+            System.out.println();
 
 
             String choice = getUserInput("Select an option: ");
@@ -45,6 +49,7 @@ public class UserInterface
                     break;
 
                 case "2":
+                    pastReceiptsScreen();
                     break;
 
                 case "0":
@@ -63,18 +68,26 @@ public class UserInterface
 
 
 
+    public static void pastReceiptsScreen()
+    {
+
+    }
+
+
     public static void orderScreen()
     {
         while (true)
         {
         System.out.println();
-        System.out.println("Order Menu");
-        System.out.println("----------------------------------");
+        System.out.println("================================");
+        System.out.println("           Order Menu           ");
+        System.out.println("================================");
         System.out.println("1) Add New Weapon");
         System.out.println("2) Add Potion");
         System.out.println("3) Add Item");
         System.out.println("4) Checkout");
         System.out.println("0) Go Back");
+        System.out.println("================================");
         System.out.println();
 
 
@@ -645,6 +658,7 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
+                break;
 
                 case "2":
                     System.out.println();
@@ -834,6 +848,7 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
+                break;
 
                 case "0":
                     System.out.println();
@@ -1189,8 +1204,30 @@ public class UserInterface
                     switch(selection)
                     {
                         case "Y":
-                            // insert logic here (wip work inside receipt writer, final major update)
-                            break;
+                            // reuses code from the receiptwriter
+                            System.out.println();
+                            System.out.println("==========================================");
+                            System.out.println("           THE BLACKSMITH SHOP           ");
+                            System.out.println("==========================================");
+                            System.out.println("Order #: " + order.getOrderNumber());
+                            System.out.println("Order Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
+                            System.out.println("------------------------------------------");
+                            for (OrderValuable item : order.getValuables())
+                            {
+                                System.out.println(item.getDetails());
+                                System.out.println("------------------------------------------");
+                            }
+                            System.out.println("Total Price: $" + order.getTotal());
+                            System.out.println("==========================================");
+                            System.out.println("    Thank you for shopping with us!      ");
+                            System.out.println("==========================================");
+                            System.out.println();
+
+
+                            // wipes the order
+                            order = new Order();
+                            homeScreen();
+                            return;
 
                         case "N":
                             // wipes the order
