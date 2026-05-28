@@ -28,9 +28,10 @@ public class UserInterface
         while (true)
         {
         System.out.println();
-        System.out.println("Weapon Shop");
+        System.out.println("Blacksmith");
         System.out.println("------------------------------------");
         System.out.println("1) New Weapon Order");
+        System.out.println("2) View Past Receipts");
         System.out.println("0) Exit");
         System.out.println();
 
@@ -43,7 +44,11 @@ public class UserInterface
                     orderScreen();
                     break;
 
+                case "2":
+                    break;
+
                 case "0":
+                    System.out.println();
                     System.out.println("See you next time!");
                     System.exit(0);
 
@@ -69,7 +74,7 @@ public class UserInterface
         System.out.println("2) Add Potion");
         System.out.println("3) Add Item");
         System.out.println("4) Checkout");
-        System.out.println("0) Cancel Order");
+        System.out.println("0) Go Back");
         System.out.println();
 
 
@@ -121,6 +126,8 @@ public class UserInterface
         System.out.println("1) Piercing Weapon (Base Price: $300)");
         System.out.println("2) Blunt Weapon (Base Price: $250)");
         System.out.println("3) Ranged Weapon (Base Price: $500)");
+        System.out.println("Don't know what Weapon to create? Check out my signature weapons");
+        System.out.println("4) Signature Weapons");
         System.out.println("0) Go Back");
         System.out.println();
 
@@ -152,7 +159,7 @@ public class UserInterface
                             break;
 
                         case "0":
-                            break;
+                            weaponSelectionScreen();
 
                         default:
                             System.out.println();
@@ -185,7 +192,7 @@ public class UserInterface
                             break;
 
                         case "0":
-                            break;
+                            weaponSelectionScreen();
 
                         default:
                             System.out.println();
@@ -218,7 +225,7 @@ public class UserInterface
                             break;
 
                         case "0":
-                            break;
+                            weaponSelectionScreen();
 
                         default:
                             System.out.println();
@@ -226,6 +233,11 @@ public class UserInterface
                             System.out.println();
                     }
                     break;
+
+                case "4":
+                    signatureWeaponScreen();
+                    break;
+
 
                 case "0":
                     System.out.println();
@@ -244,7 +256,187 @@ public class UserInterface
 
 
 
-    public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
+    public static void signatureWeaponScreen()
+    {
+        while (true)
+        {
+            System.out.println();
+            System.out.println("My signature weapon collection");
+            System.out.println("-----------------------------------------");
+            System.out.println("1) Evanescence ($700)");
+            System.out.println("2) Lord of Flames ($500)");
+            System.out.println("3) Vortex of the Void ($11000)");
+            System.out.println("4) Collapse of the Tower ($675)");
+            System.out.println("5) Hollowsky Staff ($5300)");
+            System.out.println("6) Mandragora ($700)");
+            System.out.println("7) Nike Bow ($775)");
+            System.out.println("8) Crimson Calamity ($1750)");
+            System.out.println("9) Stellarang ($10550)");
+            System.out.println("0) Go Back");
+            System.out.println();
+
+            String choice = getUserInput("Select your signature weapon here: ");
+
+            switch(choice)
+            {
+                case "1":
+                    String name = "Evanescence";
+                    String color = "Green";
+
+                    Enhancement enhancement = new Enhancement("Wind", 200);
+                    Weapon weapon = new Weapon(name, "Piercing", color, 500, enhancement);
+                    order.addValuable(weapon);
+
+                    System.out.println();
+                    System.out.println(colorize(name, color) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "2":
+                    String name2 = "Lord of Flames";
+                    String color2 = "Red";
+
+                    Enhancement enhancement2 = new Enhancement("Fire", 100);
+                    Weapon weapon2 = new Weapon(name2, "Piercing", color2, 400, enhancement2);
+                    order.addValuable(weapon2);
+
+                    System.out.println();
+                    System.out.println(colorize(name2, color2) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "3":
+                    String name3 = "Vortex of the Void";
+                    String color3 = "Green";
+
+                    Enhancement enhancement3 = new Enhancement("Astral", 10000);
+                    Weapon weapon3 = new Weapon(name3, "Piercing", color3, 1000, enhancement3);
+                    order.addValuable(weapon3);
+
+                    System.out.println();
+                    System.out.println(colorize(name3, color3) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "4":
+                    String name4 = "Collapse of the Tower";
+                    String color4 = "Black";
+
+                    Enhancement enhancement4 = new Enhancement("Earth", 200);
+                    Weapon weapon4 = new Weapon(name4, "Blunt", color4, 475, enhancement4);
+                    order.addValuable(weapon4);
+
+                    System.out.println();
+                    System.out.println(colorize(name4, color4) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "5":
+                    String name5 = "Hollowsky Staff";
+                    String color5 = "Cyan";
+
+                    Enhancement enhancement5 = new Enhancement("Time", 5000);
+                    Weapon weapon5 = new Weapon(name5, "Blunt", color5, 300, enhancement5);
+                    order.addValuable(weapon5);
+
+                    System.out.println();
+                    System.out.println(colorize(name5, color5) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "6":
+                    String name6 = "Mandragora";
+                    String color6 = "Yellow";
+
+                    Enhancement enhancement6 = new Enhancement("Wood", 300);
+                    Weapon weapon6 = new Weapon(name6, "Blunt", color6, 400, enhancement6);
+                    order.addValuable(weapon6);
+
+                    System.out.println();
+                    System.out.println(colorize(name6, color6) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "7":
+                    String name7 = "Nike Bow";
+                    String color7 = "Purple";
+
+                    Enhancement enhancement7 = new Enhancement("Electricity", 100);
+                    Weapon weapon7 = new Weapon(name7, "Ranged", color7, 675, enhancement7);
+                    order.addValuable(weapon7);
+
+                    System.out.println();
+                    System.out.println(colorize(name7, color7) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "8":
+                    String name8 = "Crimson Calamity";
+                    String color8 = "Red";
+
+                    Enhancement enhancement8 = new Enhancement("Armor Break", 1000);
+                    Weapon weapon8 = new Weapon(name8, "Ranged", color8, 750, enhancement8);
+                    order.addValuable(weapon8);
+
+                    System.out.println();
+                    System.out.println(colorize(name8, color8) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "9":
+                    String name9 = "Stellarang";
+                    String color9 = "Blue";
+
+                    Enhancement enhancement9 = new Enhancement("Astral", 10000);
+                    Weapon weapon9 = new Weapon(name9, "Ranged", color9, 550, enhancement9);
+                    order.addValuable(weapon9);
+
+                    System.out.println();
+                    System.out.println(colorize(name9, color9) + " has been added to your order");
+                    System.out.println();
+                    System.out.println("Returning to order screen...");
+                    System.out.println();
+                    orderScreen();
+                    return;
+
+                case "0":
+                    System.out.println();
+                    System.out.println("Going back to weapon selection screen...");
+                    return;
+
+                default:
+                    System.out.println();
+                    System.out.println("Invalid option. Please try again.");
+                    System.out.println();
+
+            }
+        }
+    }
+            public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
     {
         while (true)
         {
@@ -252,7 +444,7 @@ public class UserInterface
         System.out.println("Please select an Enhancement category");
         System.out.println("1) Regular Enhancement (Prices vary from $100-$300)");
         System.out.println("2) Premium Enhancement (Prices vary from $500-$10000)");
-        System.out.println("0) Go Back To Start");
+        System.out.println("0) Go Back To Weapon Selection");
 
 
             // this fixes the bug I had that made color variable break after I added the Enhancement object
@@ -278,7 +470,7 @@ public class UserInterface
                     System.out.println("H) Poison ($75)");
                     System.out.println("I) Sleep ($250)");
                     System.out.println("J) Drain ($250)");
-                    System.out.println("0) Go Back");
+                    System.out.println("0) Go Back To Weapon Selection");
 
                     String enhancementSelection = getUserInput("Select an Enhancement here: ");
 
@@ -453,7 +645,6 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
-                break;
 
                 case "2":
                     System.out.println();
@@ -469,7 +660,7 @@ public class UserInterface
                     System.out.println("H) Time ($5000)");
                     System.out.println("I) Rune ($10000)");
                     System.out.println("J) Astral ($10000)");
-                    System.out.println("0) Go Back");
+                    System.out.println("0) Go Back To Weapon Selection");
 
                     String enhancementSelection2 = getUserInput("Select an Enhancement here: ");
 
@@ -643,7 +834,6 @@ public class UserInterface
                             System.out.println("Invalid option. Please try again.");
                             System.out.println();
                     }
-                    break;
 
                 case "0":
                     System.out.println();
@@ -990,12 +1180,34 @@ public class UserInterface
                     System.out.println("Printing Receipt......");
                     System.out.println();
                     ReceiptWriter.writeOrder(order);
-                    // wipes the order
-                    order = new Order();
-                    System.out.println("Receipt printed, going back to home screen...");
-                    System.out.println();
-                    homeScreen();
-                    return;
+
+                    System.out.println("Would you like to view your receipt now?");
+                    System.out.println("Y) Yes");
+                    System.out.println("N) No");
+
+                    String selection = getUserInput("Choose here: ");
+                    switch(selection)
+                    {
+                        case "Y":
+                            // insert logic here (wip work inside receipt writer, final major update)
+                            break;
+
+                        case "N":
+                            // wipes the order
+                            order = new Order();
+
+                            System.out.println();
+                            System.out.println("Receipt printed, going back to home screen...");
+                            System.out.println();
+                            homeScreen();
+                            break;
+
+                        default:
+                            System.out.println();
+                            System.out.println("Invalid option. Please try again.");
+                            System.out.println();
+
+                    }
 
                 case "R":
                     removeSingleValuableFromOrderScreen();
