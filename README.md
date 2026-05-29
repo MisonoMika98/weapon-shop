@@ -8,11 +8,11 @@ Terminal app built in Java that lets you create and buy a custom weapon with an 
 Weapon Shop is an app designed to simulate buying weapons from a blacksmith. This project will make a good base for a real shop, and could even be converted into a shop for an adventure game.
 
 ## Features
-- **Weapons** Create a weapon by choosing between 3 types with 3 kinds of weapons each.
-- **Enhancements** After creating a weapon pick between 20 different enhancments that can be applied to your weapon.
-- **Customization** Can pick a color and rename your weapon if you want!
-- **Potions and Items** Store to buy a selection of items and potions from the shop.
-- **Receipts** Creates Receipts inside a folder that can be read through the terminal!
+- **Weapons**: Create a weapon by choosing between 3 types with 3 kinds of weapons each.
+- **Enhancements**: After creating a weapon pick between 20 different enhancments that can be applied to your weapon.
+- **Customization**: Can pick a color and rename your weapon if you want!
+- **Potions and Items**: Store to buy a selection of items and potions from the shop.
+- **Receipts**: Creates Receipts inside a folder that can be read through the terminal!
 
 ## Design Process
 - Created a diagram in Microsoft Paint to plan out what classes and functions I need along with the weapons and enhancements.
