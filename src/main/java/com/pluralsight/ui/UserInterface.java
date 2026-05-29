@@ -1292,6 +1292,15 @@ public class UserInterface
 
     public static void checkoutScreen()
     {
+        if (order.getTotal() == 0)
+        {
+            System.out.println();
+            System.out.println("ERROR, YOUR ORDER IS EMPTY");
+            System.out.println();
+            System.out.println("Going back to order screen...");
+            orderScreen();
+        }
+
         while (true)
         {
             System.out.println();
