@@ -3,7 +3,9 @@ package com.pluralsight.ui;
 import com.pluralsight.models.*;
 import com.pluralsight.util.ReceiptWriter;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -41,7 +43,7 @@ public class UserInterface
             System.out.println();
 
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Select an option here: ");
 
             switch (choice)
             {
@@ -55,7 +57,7 @@ public class UserInterface
 
                 case "0":
                     System.out.println();
-                    System.out.println("See you next time!");
+                    System.out.println("See you again soon!");
                     System.exit(0);
 
                 default:
@@ -68,22 +70,26 @@ public class UserInterface
 
 
 
-    // WIP doing this last
+
     public static void pastReceiptsScreen()
     {
         while (true)
         {
             System.out.println();
-            System.out.println("Past Receipts");
-            System.out.println("------------------------------");
+            System.out.println("================================");
+            System.out.println("        Past Receipts           ");
+            System.out.println("================================");
             // first time ever using the File object
             // this block of code will read all the files inside the folder using an array
             File receiptsFolder = new File("receipts/");
             File[] receipts = receiptsFolder.listFiles();
 
+            // if block that checks if the folder has any receipts in it at all
             if (receipts.length == 0)
             {
                 System.out.println("No receipts found.");
+                System.out.println();
+                System.out.println("Returning to home screen...");
                 System.out.println();
                 return;
             }
@@ -97,6 +103,7 @@ public class UserInterface
                 System.out.println((i + 1) + ") " + receipts[i].getName());
             }
             System.out.println("0) Go Back");
+            System.out.println("================================");
 
 
             String choice = getUserInput("Select a receipt to view: ");
@@ -107,7 +114,37 @@ public class UserInterface
                 return;
             }
 
-
+            // first try block that's used to catch any errors with parseInt
+            try
+            {
+                // more reused code/logic from removeSingleValuableFromOrderScreen();
+                int index = Integer.parseInt(choice) - 1;
+                if (index >= 0 && index < receipts.length)
+                {
+                    // if block that has a try block inside wow, used to catch any errors with the readers
+                    try (BufferedReader bufferedReader = new BufferedReader(new FileReader(receipts[index])))
+                    {
+                        System.out.println();
+                        String line;
+                        // reads every line inside the folder until there's no more
+                        while ((line = bufferedReader.readLine()) != null)
+                        {
+                            System.out.println(line);
+                        }
+                    }
+                }
+                // purpose of this else is to print something if the user inputs a number that doesn't match a receipt
+                else
+                {
+                    System.out.println("Invalid option. Please try again.");
+                }
+            }
+            // catch everything, instead of just numberformatexception because of the fileScanner
+            catch (Exception e)
+            {
+                System.out.println("Something went wrong. Please try again or check your file directory");
+                System.out.println(e.getMessage());
+            }
 
         }
 
@@ -329,18 +366,51 @@ public class UserInterface
         while (true)
         {
             System.out.println();
-            System.out.println("My signature weapon collection");
-            System.out.println("-----------------------------------------");
-            System.out.println("1) Evanescence ($700)");
-            System.out.println("2) Lord of Flames ($500)");
-            System.out.println("3) Vortex of the Void ($11000)");
-            System.out.println("4) Collapse of the Tower ($675)");
-            System.out.println("5) Hollowsky Staff ($5300)");
-            System.out.println("6) Mandragora ($700)");
-            System.out.println("7) Nike Bow ($775)");
-            System.out.println("8) Crimson Calamity ($1750)");
-            System.out.println("9) Stellarang ($10550)");
-            System.out.println("0) Go Back");
+            System.out.println("=============================================================");
+            System.out.println("               MY SIGNATURE WEAPON INVENTORY                 ");
+            System.out.println("=============================================================");
+            System.out.println();
+            System.out.println("  1) Evanescence ($700)");
+            System.out.println("     A single swing cuts through the boundary between");
+            System.out.println("     reality and dreams. Veiled emotions spill from its");
+            System.out.println("     everchanging blade, like droplets of transient dew");
+            System.out.println("     from an empty shell.");
+            System.out.println();
+            System.out.println("  2) Hrunting ($600)");
+            System.out.println("     This blade has drunk of so many veins, it's turned");
+            System.out.println("     jet black. Yet oddly enough, the more it cuts, the");
+            System.out.println("     sharper it gets.");
+            System.out.println();
+            System.out.println("  3) Vortex of the Void ($11000)");
+            System.out.println("     Once borne by a god of war. One thrust emits a");
+            System.out.println("     great current of air, generating a whirlwind of");
+            System.out.println("     plaintive screams. Afterward only silence remains.");
+            System.out.println();
+            System.out.println("  4) Collapse of the Tower ($675)");
+            System.out.println("     A hammer brought forth by the ill-fated tower.");
+            System.out.println("     Its terrifying swing crushes enemies in a single blow.");
+            System.out.println();
+            System.out.println("  5) Staff of the Magi ($10300)");
+            System.out.println("     A staff found in an ancient castle, long hidden from the");
+            System.out.println("     world. It is said the soul of a great sage resides within.");
+            System.out.println();
+            System.out.println("  6) Mandragora ($700)");
+            System.out.println("     A mace fashioned from the poisonous root");
+            System.out.println("     of the mandragora.");
+            System.out.println();
+            System.out.println("  7) Nike Bow ($775)");
+            System.out.println("     A bow blessed by the Goddess of Victory.");
+            System.out.println();
+            System.out.println("  8) Crimson Calamity ($1750)");
+            System.out.println("     Despite its old-fashioned appearance, it always");
+            System.out.println("     smells of flames and gunpowder.");
+            System.out.println();
+            System.out.println("  9) Stellarang ($10550)");
+            System.out.println("     A blisteringly brutal boomerang that strikes enemies");
+            System.out.println("     with the explosive strength of a supernova.");
+            System.out.println();
+            System.out.println("  0) Go Back");
+            System.out.println("===========================================================");
             System.out.println();
 
             String choice = getUserInput("Select your signature weapon here: ");
@@ -364,10 +434,10 @@ public class UserInterface
                     return;
 
                 case "2":
-                    String name2 = "Lord of Flames";
-                    String color2 = "Red";
+                    String name2 = "Hrunting";
+                    String color2 = "Black";
 
-                    Enhancement enhancement2 = new Enhancement("Fire", 100);
+                    Enhancement enhancement2 = new Enhancement("Earth", 200);
                     Weapon weapon2 = new Weapon(name2, "Piercing", color2, 400, enhancement2);
                     order.addValuable(weapon2);
 
@@ -381,7 +451,7 @@ public class UserInterface
 
                 case "3":
                     String name3 = "Vortex of the Void";
-                    String color3 = "Green";
+                    String color3 = "Cyan";
 
                     Enhancement enhancement3 = new Enhancement("Astral", 10000);
                     Weapon weapon3 = new Weapon(name3, "Piercing", color3, 1000, enhancement3);
@@ -412,10 +482,10 @@ public class UserInterface
                     return;
 
                 case "5":
-                    String name5 = "Hollowsky Staff";
-                    String color5 = "Cyan";
+                    String name5 = "Staff of the Magi";
+                    String color5 = "Purple";
 
-                    Enhancement enhancement5 = new Enhancement("Time", 5000);
+                    Enhancement enhancement5 = new Enhancement("Rune", 10000);
                     Weapon weapon5 = new Weapon(name5, "Blunt", color5, 300, enhancement5);
                     order.addValuable(weapon5);
 
@@ -1323,6 +1393,7 @@ public class UserInterface
                         System.out.println();
 
                 }
+                break;
 
             case "R":
                 removeSingleValuableFromOrderScreen();

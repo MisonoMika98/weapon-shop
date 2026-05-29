@@ -1,7 +1,0 @@
-Valuable:
-Sword $700.0
-Valuable:
-Teleport Stone $200.0
-Order #: 1
-Order Date: 20260526-122717
-Total Price: $900.0

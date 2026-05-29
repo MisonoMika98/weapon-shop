@@ -1,9 +1,0 @@
-Valuable:
-Bow $775.0
-Valuable:
-Smoke Ball $200.0
-Valuable:
-Elixir $1000.0
-Order #: 1
-Order Date: 20260526-121311
-Total Price: $1975.0
