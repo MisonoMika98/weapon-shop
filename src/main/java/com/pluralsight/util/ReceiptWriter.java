@@ -32,7 +32,7 @@ public class ReceiptWriter
             }
             printWriter.println("Total Price: $" + order.getTotal());
             printWriter.println("==========================================");
-            printWriter.println("    Thank you for shopping with us!      ");
+            printWriter.println("      Thank you for shopping with ME      ");
             printWriter.println("==========================================");
         }
         catch(Exception ex)

@@ -3,6 +3,7 @@ package com.pluralsight.ui;
 import com.pluralsight.models.*;
 import com.pluralsight.util.ReceiptWriter;
 
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -31,7 +32,7 @@ public class UserInterface
         {
             System.out.println();
             System.out.println("================================");
-            System.out.println("       The Blacksmith Shop      ");
+            System.out.println("       THE BLACKSMITH SHOP      ");
             System.out.println("================================");
             System.out.println("  1) New Order");
             System.out.println("  2) View Past Receipts");
@@ -67,11 +68,52 @@ public class UserInterface
 
 
 
-
+    // WIP doing this last
     public static void pastReceiptsScreen()
     {
+        while (true)
+        {
+            System.out.println();
+            System.out.println("Past Receipts");
+            System.out.println("------------------------------");
+            // first time ever using the File object
+            // this block of code will read all the files inside the folder using an array
+            File receiptsFolder = new File("receipts/");
+            File[] receipts = receiptsFolder.listFiles();
+
+            if (receipts.length == 0)
+            {
+                System.out.println("No receipts found.");
+                System.out.println();
+                return;
+            }
+
+
+            // reused logic/code from my removeSingleValuableFromOrderScreen();
+            // have to use length instead of size() since it's an array
+            for (int i = 0; i < receipts.length; i++)
+            {
+                // counts up automatically, for each individual valuable using the index and prints it in a line
+                System.out.println((i + 1) + ") " + receipts[i].getName());
+            }
+            System.out.println("0) Go Back");
+
+
+            String choice = getUserInput("Select a receipt to view: ");
+            if (choice.equals("0"))
+            {
+                System.out.println();
+                System.out.println("Going back to home screen...");
+                return;
+            }
+
+
+
+        }
 
     }
+
+
 
 
     public static void orderScreen()
@@ -80,7 +122,7 @@ public class UserInterface
         {
         System.out.println();
         System.out.println("================================");
-        System.out.println("           Order Menu           ");
+        System.out.println("           ORDER MENU           ");
         System.out.println("================================");
         System.out.println("1) Add New Weapon");
         System.out.println("2) Add Potion");
@@ -132,17 +174,21 @@ public class UserInterface
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Weapon Order");
-        System.out.println("-------------------------------------------");
-        System.out.println("Please select a Weapon Type");
-        System.out.println("1) Piercing Weapon (Base Price: $300)");
-        System.out.println("2) Blunt Weapon (Base Price: $250)");
-        System.out.println("3) Ranged Weapon (Base Price: $500)");
-        System.out.println("Don't know what Weapon to create? Check out my signature weapons");
-        System.out.println("4) Signature Weapons");
-        System.out.println("0) Go Back");
-        System.out.println();
+            System.out.println();
+            System.out.println("==================================");
+            System.out.println("        WEAPON TYPE SELECT        ");
+            System.out.println("==================================");
+            System.out.println("  1) Piercing Weapon  ($300)");
+            System.out.println("  2) Blunt Weapon     ($250)");
+            System.out.println("  3) Ranged Weapon    ($500)");
+            System.out.println("----------------------------------");
+            System.out.println("  Don't know what Weapon to create?");
+            System.out.println("  Check out my signature weapons:");
+            System.out.println("  4) Signature Weapons");
+            System.out.println("----------------------------------");
+            System.out.println("  0) Go Back");
+            System.out.println("==================================");
+            System.out.println();
 
 
             String selection = getUserInput("Select a weapon type here: ");
@@ -150,11 +196,14 @@ public class UserInterface
             {
                 case "1":
                     System.out.println();
-                    System.out.println("Please select your weapon");
-                    System.out.println("A) Sword ($100)");
-                    System.out.println("B) Katana ($200)");
-                    System.out.println("C) Spear ($300)");
-                    System.out.println("0) Go Back");
+                    System.out.println("================================");
+                    System.out.println("        PIERCING WEAPONS        ");
+                    System.out.println("================================");
+                    System.out.println("  A) Sword   ($100)");
+                    System.out.println("  B) Katana  ($200)");
+                    System.out.println("  C) Spear   ($300)");
+                    System.out.println("  0) Go Back");
+                    System.out.println("================================");
 
                     String choice = getUserInput("Select a weapon here: ");
                     switch (choice)
@@ -183,11 +232,14 @@ public class UserInterface
 
                 case "2":
                     System.out.println();
-                    System.out.println("Please select your weapon");
-                    System.out.println("A) Staff ($50)");
-                    System.out.println("B) Mace ($150)");
-                    System.out.println("C) Hammer ($225)");
-                    System.out.println("0) Go Back");
+                    System.out.println("================================");
+                    System.out.println("         BLUNT WEAPONS          ");
+                    System.out.println("================================");
+                    System.out.println("  A) Staff   ($50)");
+                    System.out.println("  B) Mace    ($150)");
+                    System.out.println("  C) Hammer  ($225)");
+                    System.out.println("  0) Go Back");
+                    System.out.println("================================");
 
                     String choice2 = getUserInput("Select a weapon here: ");
                     switch (choice2)
@@ -216,11 +268,14 @@ public class UserInterface
 
                 case "3":
                     System.out.println();
-                    System.out.println("Please select your weapon");
-                    System.out.println("A) Bow ($175)");
-                    System.out.println("B) Gun ($250)");
-                    System.out.println("C) Boomerang ($50)");
-                    System.out.println("0) Go Back");
+                    System.out.println("================================");
+                    System.out.println("         RANGED WEAPONS         ");
+                    System.out.println("================================");
+                    System.out.println("  A) Bow        ($175)");
+                    System.out.println("  B) Gun        ($250)");
+                    System.out.println("  C) Boomerang  ($50)");
+                    System.out.println("  0) Go Back");
+                    System.out.println("================================");
 
                     String choice3 = getUserInput("Select a weapon here: ");
                     switch (choice3)
@@ -449,15 +504,23 @@ public class UserInterface
             }
         }
     }
-            public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
+
+
+
+
+    public static void enhancementSelectionScreen(String weaponName, String weaponType, double price)
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Please select an Enhancement category");
-        System.out.println("1) Regular Enhancement (Prices vary from $100-$300)");
-        System.out.println("2) Premium Enhancement (Prices vary from $500-$10000)");
-        System.out.println("0) Go Back To Weapon Selection");
+            System.out.println();
+            System.out.println("==================================");
+            System.out.println("     ENHANCEMENT CATEGORIES       ");
+            System.out.println("==================================");
+            System.out.println("  1) Regular  ($100 - $300)");
+            System.out.println("  2) Premium  ($500 - $10000)");
+            System.out.println("  0) Go Back To Weapon Selection");
+            System.out.println("==================================");
+            System.out.println();
 
 
             // this fixes the bug I had that made color variable break after I added the Enhancement object
@@ -471,19 +534,22 @@ public class UserInterface
             {
                 case "1":
                     System.out.println();
-                    System.out.println("Regular Enhancement List");
-                    System.out.println("---------------------------------------------");
-                    System.out.println("A) Fire ($100)");
-                    System.out.println("B) Water ($100)");
-                    System.out.println("C) Electricity ($100)");
-                    System.out.println("D) Wind ($200)");
-                    System.out.println("E) Ice ($200)");
-                    System.out.println("F) Earth ($200)");
-                    System.out.println("G) Wood ($300)");
-                    System.out.println("H) Poison ($75)");
-                    System.out.println("I) Sleep ($250)");
-                    System.out.println("J) Drain ($250)");
-                    System.out.println("0) Go Back To Weapon Selection");
+                    System.out.println("================================");
+                    System.out.println("     REGULAR ENHANCEMENTS       ");
+                    System.out.println("================================");
+                    System.out.println("  A) Fire        ($100)");
+                    System.out.println("  B) Water       ($100)");
+                    System.out.println("  C) Electricity ($100)");
+                    System.out.println("  D) Wind        ($200)");
+                    System.out.println("  E) Ice         ($200)");
+                    System.out.println("  F) Earth       ($200)");
+                    System.out.println("  G) Wood        ($300)");
+                    System.out.println("  H) Poison      ($75)");
+                    System.out.println("  I) Sleep       ($250)");
+                    System.out.println("  J) Drain       ($250)");
+                    System.out.println("  0) Go Back To Weapon Selection");
+                    System.out.println("================================");
+                    System.out.println();
 
                     String enhancementSelection = getUserInput("Select an Enhancement here: ");
 
@@ -662,19 +728,22 @@ public class UserInterface
 
                 case "2":
                     System.out.println();
-                    System.out.println("Premium Enhancement List");
-                    System.out.println("---------------------------------------------");
-                    System.out.println("A) Dark ($500)");
-                    System.out.println("B) Light ($500)");
-                    System.out.println("C) Silence ($700)");
-                    System.out.println("D) Armor Break ($1000)");
-                    System.out.println("E) Psychic ($1500)");
-                    System.out.println("F) Nuclear ($1500)");
-                    System.out.println("G) Crystal ($3000)");
-                    System.out.println("H) Time ($5000)");
-                    System.out.println("I) Rune ($10000)");
-                    System.out.println("J) Astral ($10000)");
-                    System.out.println("0) Go Back To Weapon Selection");
+                    System.out.println("================================");
+                    System.out.println("     PREMIUM ENHANCEMENTS       ");
+                    System.out.println("================================");
+                    System.out.println("  A) Dark        ($500)");
+                    System.out.println("  B) Light       ($500)");
+                    System.out.println("  C) Silence     ($700)");
+                    System.out.println("  D) Armor Break ($1000)");
+                    System.out.println("  E) Psychic     ($1500)");
+                    System.out.println("  F) Nuclear     ($1500)");
+                    System.out.println("  G) Crystal     ($3000)");
+                    System.out.println("  H) Time        ($5000)");
+                    System.out.println("  I) Rune        ($10000)");
+                    System.out.println("  J) Astral      ($10000)");
+                    System.out.println("  0) Go Back To Weapon Selection");
+                    System.out.println("================================");
+                    System.out.println();
 
                     String enhancementSelection2 = getUserInput("Select an Enhancement here: ");
 
@@ -871,19 +940,23 @@ public class UserInterface
         while (true)
         {
         // uses the final color strings at the top of the class, RESET makes it so they don't bleed into the rest of the terminal's text
-        System.out.println();
-        System.out.println("Please select a color for your weapon");
-        System.out.println("0) " + RESET + "No Color" + RESET);
-        System.out.println("1) " + RED + "Red" + RESET);
-        System.out.println("2) " + BLUE + "Blue" + RESET);
-        System.out.println("3) " + GREEN + "Green" + RESET);
-        System.out.println("4) " + YELLOW + "Yellow" + RESET);
-        System.out.println("5) " + PURPLE + "Purple" + RESET);
-        System.out.println("6) " + CYAN + "Cyan" + RESET);
-        System.out.println("7) " + BLACK + "Black" + RESET);
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("         COLOR SELECTION        ");
+            System.out.println("================================");
+            System.out.println("  0) No Color");
+            System.out.println("  1) " + RED + "Red" + RESET);
+            System.out.println("  2) " + BLUE + "Blue" + RESET);
+            System.out.println("  3) " + GREEN + "Green" + RESET);
+            System.out.println("  4) " + YELLOW + "Yellow" + RESET);
+            System.out.println("  5) " + PURPLE + "Purple" + RESET);
+            System.out.println("  6) " + CYAN + "Cyan" + RESET);
+            System.out.println("  7) " + BLACK + "Black" + RESET);
+            System.out.println("================================");
+            System.out.println();
 
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Select your color here: ");
 
             switch (choice)
             {
@@ -970,13 +1043,13 @@ public class UserInterface
         System.out.println("X) No");
 
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Make your choice here: ");
 
             switch (choice)
             {
                 case "Y":
                     System.out.println();
-                    return getUserWeaponName("Enter a name for your Weapon here: ");
+                    return getUserWeaponName("Enter the name for your Weapon here: ");
 
                 case "X":
                     // keeps weaponName as the default no name
@@ -997,19 +1070,21 @@ public class UserInterface
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Potion Order");
-        System.out.println("----------------------------------");
-        System.out.println("Please select a potion");
-        System.out.println("1) Small Potion (Restores 50HP)");
-        System.out.println("2) Medium Potion (Restores 100HP)");
-        System.out.println("3) Large Potion (Restores 300HP)");
-        System.out.println("4) Max Potion (Restores ALL HP)");
-        System.out.println("5) Elixir (Restores ALL HP and MP)");
-        System.out.println("0) Go Back");
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("          POTION MENU           ");
+            System.out.println("================================");
+            System.out.println("  1) Small Potion  (50HP)");
+            System.out.println("  2) Medium Potion (100HP)");
+            System.out.println("  3) Large Potion  (300HP)");
+            System.out.println("  4) Max Potion    (ALL HP)");
+            System.out.println("  5) Elixir        (ALL HP + MP)");
+            System.out.println("  0) Go Back");
+            System.out.println("================================");
+            System.out.println();
 
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Select your potion here: ");
 
             switch (choice)
             {
@@ -1083,17 +1158,19 @@ public class UserInterface
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Item Order");
-        System.out.println("----------------------------------");
-        System.out.println("Please select an item:");
-        System.out.println("1) Smoke Ball (Escape from any Battle) ($200)");
-        System.out.println("2) Teleport Stone (Escape from any dungeon) ($200)");
-        System.out.println("3) Bomb (Deals damage) ($200)");
-        System.out.println("0) Go Back");
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("           ITEMS MENU           ");
+            System.out.println("================================");
+            System.out.println("  1) Smoke Ball     (Escapes Battle)   ($200)");
+            System.out.println("  2) Teleport Stone (Escapes Dungeon)  ($200)");
+            System.out.println("  3) Bomb           (Deals Damage)    ($200)");
+            System.out.println("  0) Go Back");
+            System.out.println("================================");
+            System.out.println();
 
 
-            String choice = getUserInput("Select an option: ");
+            String choice = getUserInput("Select your item here: ");
 
             switch (choice)
             {
@@ -1147,9 +1224,10 @@ public class UserInterface
     {
         while (true)
         {
-        System.out.println();
-        System.out.println("Your Order");
-        System.out.println("--------------------------------------------------");
+            System.out.println();
+            System.out.println("================================");
+            System.out.println("           YOUR ORDER           ");
+            System.out.println("================================");
 
         // turns the list into a stream
         order.getValuables().stream()
@@ -1167,112 +1245,112 @@ public class UserInterface
                 // .forEach item that isn't a Weapon, prints
                 .forEach(item -> System.out.println(item.getName() + ", $" + item.getPrice()));
 
+        System.out.println("--------------------------------");
         // prints the total price using my getTotal() method
-        System.out.println("Total: $" + order.getTotal());
-
+        System.out.println("  Total: $" + order.getTotal());
+        System.out.println("================================");
         System.out.println();
-        System.out.println("What would you like to do?");
-        // prints the order into its own .txt receipt file inside the receipts directory
-        System.out.println("Y) Confirm Order");
-        // remove an individual item from order
-        System.out.println("R) Remove a Valuable from your Order");
-        // shows the user their order again
-        System.out.println("S) Show my Order again");
-        // discards order completely
-        System.out.println("N) Cancel Order");
-        // goes back to the last screen, (add another item)
-        System.out.println("0) Go Back To Order Screen (Forgot something?)");
+        System.out.println("  Y) Confirm Order");
+        System.out.println("  R) Remove a Valuable");
+        System.out.println("  S) Show Order Again");
+        System.out.println("  N) Cancel Order");
+        System.out.println("  0) Go Back");
+        System.out.println("================================");
+        System.out.println();
 
 
-            String choice = getUserInput("Make your selection here: ");
+        String choice = getUserInput("Make your selection here: ");
 
-            switch (choice)
-            {
-                case "Y":
-                    System.out.println();
-                    System.out.println("Your Order has been confirmed");
-                    System.out.println();
-                    System.out.println("Printing Receipt......");
-                    System.out.println();
-                    ReceiptWriter.writeOrder(order);
+        switch (choice)
+        {
+            case "Y":
+                System.out.println();
+                System.out.println("Your Order has been confirmed");
+                System.out.println();
+                System.out.println("Printing Receipt......");
+                System.out.println();
+                ReceiptWriter.writeOrder(order);
 
-                    System.out.println("Would you like to view your receipt now?");
-                    System.out.println("Y) Yes");
-                    System.out.println("N) No");
+                System.out.println("Would you like to view your receipt now?");
+                System.out.println("Y) Yes");
+                System.out.println("N) No");
 
-                    String selection = getUserInput("Choose here: ");
-                    switch(selection)
-                    {
-                        case "Y":
-                            // reuses code from the receiptwriter
-                            System.out.println();
-                            System.out.println("==========================================");
-                            System.out.println("           THE BLACKSMITH SHOP           ");
-                            System.out.println("==========================================");
-                            System.out.println("Order #: " + order.getOrderNumber());
-                            System.out.println("Order Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
+                String selection = getUserInput("Choose here: ");
+                switch(selection)
+                {
+                    case "Y":
+                        // reuses code from the receiptwriter
+                        System.out.println();
+                        System.out.println("==========================================");
+                        System.out.println("           THE BLACKSMITH SHOP           ");
+                        System.out.println("==========================================");
+                        System.out.println("Order #: " + order.getOrderNumber());
+                        System.out.println("Order Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")));
+                        System.out.println("------------------------------------------");
+                        for (OrderValuable item : order.getValuables())
+                        {
+                            System.out.println(item.getDetails());
                             System.out.println("------------------------------------------");
-                            for (OrderValuable item : order.getValuables())
-                            {
-                                System.out.println(item.getDetails());
-                                System.out.println("------------------------------------------");
-                            }
-                            System.out.println("Total Price: $" + order.getTotal());
-                            System.out.println("==========================================");
-                            System.out.println("    Thank you for shopping with us!      ");
-                            System.out.println("==========================================");
-                            System.out.println();
+                        }
+                        System.out.println("Total Price: $" + order.getTotal());
+                        System.out.println("==========================================");
+                        System.out.println("     Thank you for shopping with ME      ");
+                        System.out.println("==========================================");
+                        System.out.println();
 
 
-                            // wipes the order
-                            order = new Order();
-                            homeScreen();
-                            return;
+                        // wipes the order
+                        order = new Order();
+                        System.out.println();
+                        System.out.println("Receipt printed, going back to home screen...");
+                        System.out.println();
+                        homeScreen();
+                        return;
 
-                        case "N":
-                            // wipes the order
-                            order = new Order();
+                    case "N":
+                        // wipes the order
+                        order = new Order();
 
-                            System.out.println();
-                            System.out.println("Receipt printed, going back to home screen...");
-                            System.out.println();
-                            homeScreen();
-                            break;
+                        System.out.println();
+                        System.out.println("Receipt printed, going back to home screen...");
+                        System.out.println();
+                        homeScreen();
+                        break;
 
-                        default:
-                            System.out.println();
-                            System.out.println("Invalid option. Please try again.");
-                            System.out.println();
+                    default:
+                        System.out.println();
+                        System.out.println("Invalid option. Please try again.");
+                        System.out.println();
 
-                    }
+                }
 
-                case "R":
-                    removeSingleValuableFromOrderScreen();
-                    break;
+            case "R":
+                removeSingleValuableFromOrderScreen();
+                break;
 
-                case "S":
-                    break;
+            case "S":
+                break;
 
-                case "N":
-                    System.out.println();
-                    System.out.println("Your order has been canceled");
-                    // wipes the order
-                    order = new Order();
-                    System.out.println();
-                    System.out.println("Going back to home screen...");
-                    homeScreen();
-                    return;
+            case "N":
+                System.out.println();
+                System.out.println("Your order has been canceled");
+                // wipes the order
+                order = new Order();
+                System.out.println();
+                System.out.println("Going back to home screen...");
+                homeScreen();
+                return;
 
-                case "0":
-                    System.out.println();
-                    System.out.println("Going back to order screen...");
-                    orderScreen();
-                    break;
+            case "0":
+                System.out.println();
+                System.out.println("Going back to order screen...");
+                orderScreen();
+                break;
 
-                default:
-                    System.out.println();
-                    System.out.println("Invalid option. Please try again.");
-                    System.out.println();
+            default:
+                System.out.println();
+                System.out.println("Invalid option. Please try again.");
+                System.out.println();
             }
         }
     }
@@ -1285,8 +1363,9 @@ public class UserInterface
         while (true)
         {
         System.out.println();
-        System.out.println("Select a Valuable to remove:");
-        System.out.println("----------------------------------------------------");
+        System.out.println("================================");
+        System.out.println("   Select a Valuable to Remove  ");
+        System.out.println("================================");
 
         // calls the list as a list (no stream)
         List<OrderValuable> valuables = order.getValuables();
@@ -1299,7 +1378,7 @@ public class UserInterface
         System.out.println("0) Go Back");
 
 
-            String choice = getUserInput("Select an item to remove: ");
+            String choice = getUserInput("Make your choice here: ");
 
             // goes back to the previous screen
             if (choice.equals("0"))
