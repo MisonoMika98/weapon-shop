@@ -15,10 +15,11 @@ Weapon Shop is an app designed to simulate buying weapons from a blacksmith. Thi
 - **Receipts**: Creates Receipts inside a folder that can be read through the terminal!
 
 ## Design Process
-- Created a diagram in Microsoft Paint to plan out what classes and functions I need along with the weapons and enhancements.
+- Created a diagram in Microsoft Paint to plan out what classes and functions I need along with the weapons and enhancements. In the future I will try to use an online charting app.
 - After creating my classes, I decided to use an Interface for 4 of them because they were quite similar.
 - Once I got deeper into the project I knew I wanted to add a way to make my color actually do something, so I made the colors "dye" the name of the weapon.
 - As I was finishing up, I decided to add a way to view Receipts in the terminal and polish my UserInterface class to make it look cleaner than my last project.
+<img width="1774" height="1377" alt="capstone2 scuff chart" src="https://github.com/user-attachments/assets/62a6e5dc-b44d-48eb-a062-91d9f8d30684" />
 
 ## Interesting Code
 - I am most proud of the methods that allow the weapon names to show up colorized in the terminal.
@@ -26,6 +27,8 @@ Weapon Shop is an app designed to simulate buying weapons from a blacksmith. Thi
 - Last, my method that prints the Receipts on the terminal by reading the directory.
 
 # SCREENSHOTS
+
+---
 
 <img width="307" height="340" alt="1" src="https://github.com/user-attachments/assets/9db4cef1-b36c-4058-979d-0a2d497a485a" />
 <img width="288" height="380" alt="2" src="https://github.com/user-attachments/assets/7599dd2d-6b09-4772-abd9-9cab7a9dd986" />
